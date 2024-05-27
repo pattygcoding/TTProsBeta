@@ -1,0 +1,29 @@
+.Gallery-header {
+    text-align: center;
+}
+
+.sec_sp {
+    margin-bottom: calc(3rem + 5.128vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.t_border {
+    border-color: var(--text-color) !important;
+}
+
+.gallery-image {
+    height: auto;
+    width: 500px;
+    margin: 0 10px;
+}
+
+.gallery-button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+    color: var(--text-color);
+}
