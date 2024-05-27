@@ -50,7 +50,10 @@ const Headermain = () => {
                   <Link onClick={handleToggle} to="/about" className="my-3">{text.menu.about_us}</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to={text.links.facebook} className="my-3">{text.menu.facebook}</Link>
+                  <a onClick={handleToggle} href={text.links.facebook} target="_blank" rel="noopener noreferrer" className="my-3">
+  {text.menu.facebook}
+</a>
+
                   </li>
                 </ul>
               </div>
