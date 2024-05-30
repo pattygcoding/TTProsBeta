@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes} from "react-router-dom";
 import withRouter from "../hooks/withRouter"
 import { Home } from "../pages/home";
-import { TailgatePackages } from "../pages/tailgate-packages";
+import { TailgatePackages } from "../pages/request-package/tailgate-packages";
 import { RequestPackage } from "../pages/request-package";
 import { About } from "../pages/about";
 import { Gallery } from "../pages/gallery";
@@ -24,7 +24,6 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/tailgate-packages" element={<TailgatePackages />} />
         <Route path="/request-package" element={<RequestPackage />} />
         <Route path="*" element={<Home />} />
       </Routes>

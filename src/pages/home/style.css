@@ -15,7 +15,7 @@ section {
 }
 
 .slides {
-	animation: slideshow 60s infinite;
+	animation: slideshow 180s infinite;
 }
 
 .intro_sec {

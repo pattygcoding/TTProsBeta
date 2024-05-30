@@ -8,6 +8,7 @@ import AddOnSelection from './add-on-selection';
 import email from '../../config/email.json';
 import text from '../../config/text.json';
 import "./style.css";
+import TailgatePackages from "./tailgate-packages";
 
 export const RequestPackage = () => {
 	const [formData, setFormdata] = useState({
@@ -186,6 +187,7 @@ export const RequestPackage = () => {
 							<hr className="t_border my-4 ml-0" />
 						</Col>
 					</Row>
+					<TailgatePackages/>
 					<Row className="sec_sp">
 						<Col lg="12">
 							<Alert
