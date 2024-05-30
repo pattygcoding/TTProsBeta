@@ -1,0 +1,30 @@
+.season_select {
+	flex: 1;
+}
+
+.cub-box,
+.vip-box {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #ccc;
+	padding: 10px;
+	cursor: pointer;
+	flex: 1;
+}
+
+.cub-box:hover,
+.vip-box:hover {
+	background-color: rgba(128, 0, 128, 0.4);
+}
+
+.full-box {
+	width: 100%;
+	height: 100%;
+}
+
+.game_select {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}

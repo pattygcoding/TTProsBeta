@@ -2,6 +2,7 @@
 import React from 'react';
 import text from '../../../config/text.json';
 
+
 const AddOnSelection = ({ formData, handleCooler, handleCoolerAmount, handleChair, handleChairAmount, handleTable, handleTableAmount, handleTent, handleTentAmount, handleCocktailTable, handleCocktailTableAmount, handleSideTent, handleSideTentAmount }) => {
   return (
     <div>
@@ -9,7 +10,7 @@ const AddOnSelection = ({ formData, handleCooler, handleCoolerAmount, handleChai
       <div className="add_on_container">
         <div className="add_on_option">
           <div
-            className={`cub-box add_on_box ${formData.include_cooler ? 'selected-orange' : ''}`}
+            className={`generic-box add_on_box ${formData.include_cooler ? 'selected-orange' : ''}`}
             onClick={handleCooler}
           >
             {text.packages.add_ons.cooler.name} - ${text.packages.add_ons.cooler.price}{text.packages.form.per_game}
@@ -29,7 +30,7 @@ const AddOnSelection = ({ formData, handleCooler, handleCoolerAmount, handleChai
         </div>
         <div className="add_on_option">
           <div
-            className={`cub-box add_on_box ${formData.include_chair ? 'selected-orange' : ''}`}
+            className={`generic-box add_on_box ${formData.include_chair ? 'selected-orange' : ''}`}
             onClick={handleChair}
           >
             {text.packages.add_ons.chair.name} - ${text.packages.add_ons.chair.price}{text.packages.form.per_game}
