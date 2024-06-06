@@ -1,9 +1,9 @@
 import React from "react";
-import "./TailgatePackages.css";
 import { Row, Col } from "react-bootstrap";
 import text from '../../../config/text.json';
+import "./PackageInfograph.css";
 
-const TailgatePackages = () => {
+const PackageInfograph = () => {
 	return (
 		<Col>
 			<Row className="sec_sp">
@@ -32,4 +32,4 @@ const TailgatePackages = () => {
 	);
 };
 
-export default TailgatePackages
+export default PackageInfograph

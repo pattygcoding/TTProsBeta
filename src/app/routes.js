@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes} from "react-router-dom";
 import withRouter from "../hooks/withRouter"
 import { Home } from "../pages/home";
-import { RequestPackage } from "../pages/request-package";
+import { TailgatePackages } from "../pages/tailgate-packages";
 import { About } from "../pages/about";
 import { Gallery } from "../pages/gallery";
 import { SocialIcons } from "../components/social-icons";
@@ -23,7 +23,7 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/request-package" element={<RequestPackage />} />
+        <Route path="/tailgate-packages" element={<TailgatePackages />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </CSSTransition>

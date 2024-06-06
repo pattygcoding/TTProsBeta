@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import { Form } from './form';
+import { ContactForms } from './contact-forms';
 import { PackageSelection } from './package-selection';
-import { TailgatePackages } from "./tailgate-packages";
+import { PackageInfograph } from "./package-infograph";
 import { AddOnSelection } from './add-on-selection';
 import email from '../../config/email.json';
 import text from '../../config/text.json';
-import "./RequestPackage.css";
+import "./TailgatePackages.css";
 
-const RequestPackage = () => {
+const TailgatePackages = () => {
 	const [formData, setFormdata] = useState({
 		first_name: "",
 		last_name: "",
@@ -114,7 +114,7 @@ const RequestPackage = () => {
 				}
 			);
 
-			console.log(handleSubmit, "Section 4");
+		console.log(handleSubmit, "Section 4");
 	};
 
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
@@ -155,19 +155,6 @@ const RequestPackage = () => {
 	const handleCocktailTable = () => toggleAddOns('include_cocktail_table', 'selectedCocktailTable');
 	const handleSideTent = () => toggleAddOns('include_side_tent', 'selectedSideTent');
 
-	const toggleAddOnAmounts = (key) => (e) => {
-		setFormdata((prevData) => ({
-			...prevData,
-			[key]: e.target.value,
-		}));
-	};
-	const handleCoolerAmount = toggleAddOnAmounts('cooler_amount');
-	const handleChairAmount = toggleAddOnAmounts('chair_amount');
-	const handleTableAmount = toggleAddOnAmounts('table_amount');
-	const handleTentAmount = toggleAddOnAmounts('tent_amount');
-	const handleCocktailTableAmount = toggleAddOnAmounts('cocktail_table_amount');
-	const handleSideTentAmount = toggleAddOnAmounts('side_tent_amount');
-
 	const handleScrollToForm = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
 	};
@@ -188,7 +175,7 @@ const RequestPackage = () => {
 						</Col>
 					</Row>
 					<div className="pictures" onClick={handleScrollToForm}>
-						<TailgatePackages />
+						<PackageInfograph />
 					</div>
 					<Row className="sec_sp" id="form-section">
 						<Col lg="12">
@@ -202,7 +189,7 @@ const RequestPackage = () => {
 							</Alert>
 						</Col>
 						<Col className="align-items-center">
-							<Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
+							<ContactForms formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
 							<PackageSelection
 								selectedPackageType={selectedPackageType}
 								handlePackageTypeChange={handlePackageTypeChange}
@@ -219,26 +206,20 @@ const RequestPackage = () => {
 							<AddOnSelection
 								formData={formData}
 								handleCooler={handleCooler}
-								handleCoolerAmount={handleCoolerAmount}
 								handleChair={handleChair}
-								handleChairAmount={handleChairAmount}
 								handleTable={handleTable}
-								handleTableAmount={handleTableAmount}
 								handleTent={handleTent}
-								handleTentAmount={handleTentAmount}
 								handleCocktailTable={handleCocktailTable}
-								handleCocktailTableAmount={handleCocktailTableAmount}
 								handleSideTent={handleSideTent}
-								handleSideTentAmount={handleSideTentAmount}
 							/>
 							<form onSubmit={handleSubmit}>
-							<Row>
-								<Col lg="12" className="form-group">
-									<button className="btn ac_btn" type="submit" disabled={formData.loading}>
-										{formData.loading ? "Sending..." : "Send"}
-									</button>
-								</Col>
-							</Row>
+								<Row>
+									<Col lg="12" className="form-group">
+										<button className="btn ac_btn" type="submit" disabled={formData.loading}>
+											{formData.loading ? "Sending..." : "Send"}
+										</button>
+									</Col>
+								</Row>
 							</form>
 						</Col>
 					</Row>
@@ -249,4 +230,4 @@ const RequestPackage = () => {
 	);
 };
 
-export default RequestPackage;
+export default TailgatePackages;

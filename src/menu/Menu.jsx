@@ -39,7 +39,7 @@ const Menu = () => {
                     <Link onClick={handleToggle} to="/" className="my-3">{text.menu.home}</Link>
                   </li>
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/request-package" className="my-3">{text.menu.request_package}</Link>
+                    <Link onClick={handleToggle} to="/tailgate-packages" className="my-3">{text.menu.tailgate_packages}</Link>
                   </li>
                   <li className="menu_item">
                     <Link onClick={handleToggle} to="/gallery" className="my-3">{text.menu.gallery}</Link>

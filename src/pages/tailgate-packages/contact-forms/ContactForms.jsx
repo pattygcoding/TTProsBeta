@@ -1,10 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { TextForm } from './text-form';
-import "./Form.css";
+import "./ContactForms.css";
 
-
-const Form = ({ formData, handleChange, handleSubmit, csrfToken }) => {
+const ContactForms = ({ formData, handleChange, handleSubmit, csrfToken }) => {
 	return (
 		<form onSubmit={handleSubmit} className="contact__form w-100" autoComplete="off">
 			<input type="hidden" name="_csrf" value={csrfToken} />
@@ -53,4 +52,4 @@ const Form = ({ formData, handleChange, handleSubmit, csrfToken }) => {
 	);
 };
 
-export default Form;
+export default ContactForms;
