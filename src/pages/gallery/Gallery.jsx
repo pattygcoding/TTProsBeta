@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import image from '../../config/image.json';
 import text from '../../config/text.json';
+import "./Gallery.css";
 
-export const Gallery = () => {
+const Gallery = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = Object.values(image.gallery);
 
@@ -48,3 +48,5 @@ export const Gallery = () => {
         </HelmetProvider>
     );
 };
+
+export default Gallery;

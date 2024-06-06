@@ -2,11 +2,10 @@ import React from "react";
 import { Route, Routes} from "react-router-dom";
 import withRouter from "../hooks/withRouter"
 import { Home } from "../pages/home";
-import { TailgatePackages } from "../pages/request-package/tailgate-packages";
 import { RequestPackage } from "../pages/request-package";
 import { About } from "../pages/about";
 import { Gallery } from "../pages/gallery";
-import { Socialicons } from "../components/socialicons";
+import { SocialIcons } from "../components/social-icons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const AnimatedRoutes = withRouter(({ location }) => (
@@ -35,7 +34,7 @@ function AppRoutes() {
   return (
     <div className="s_c">
       <AnimatedRoutes />
-      <Socialicons />
+      <SocialIcons />
     </div>
   );
 }

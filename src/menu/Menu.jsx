@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import "./style.css";
+
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import Themetoggle from "../components/themetoggle";
+import { DarkLightMode } from "../components/dark-light-mode";
 import text from '../config/text.json';
+import "./Menu.css";
 
-const Headermain = () => {
+const Menu = () => {
   const [isActive, setActive] = useState("false");
 
   const handleToggle = () => {
@@ -21,7 +22,7 @@ const Headermain = () => {
             {text.meta.logo}
           </Link>
           <div className="d-flex align-items-center">
-          <Themetoggle />
+          <DarkLightMode />
           <button className="menu__button  nav_ac" onClick={handleToggle}>
             {!isActive ? <VscClose /> : <VscGrabber />}
           </button>
@@ -71,4 +72,4 @@ const Headermain = () => {
   );
 };
 
-export default Headermain;
+export default Menu;

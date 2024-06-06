@@ -1,8 +1,8 @@
 // components/RequestPackage/PackageSelection.js
 import React from 'react';
 import text from '../../../config/text.json';
-import "./style.css";
-import GameSelection from './game-selection';
+import { GameSelection } from './game-selection';
+import "./PackageSelection.css";
 
 const PackageSelection = ({ selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData }) => {
 	return (

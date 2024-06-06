@@ -1,16 +1,9 @@
 import React from "react";
-import "./style.css";
-import {
-  FaGithub,
-  FaTwitter,
-  FaFacebookF,
-  FaLinkedin,
-  FaYoutube,
-  FaTwitch,
-} from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import text from '../../config/text.json';
+import "./SocialIcons.css";
 
-export const Socialicons = (params) => {
+const SocialIcons = (params) => {
   return (
     <div className="stick_follow_icon">
       <ul>
@@ -26,3 +19,5 @@ export const Socialicons = (params) => {
     </div>
   );
 };
+
+export default SocialIcons;

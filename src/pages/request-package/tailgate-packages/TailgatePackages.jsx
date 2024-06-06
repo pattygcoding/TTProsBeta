@@ -1,7 +1,8 @@
 import React from "react";
-import "./style.css";
+
 import { Row, Col } from "react-bootstrap";
 import text from '../../../config/text.json';
+import "./TailgatePackages.css";
 
 const TailgatePackages = () => {
 	return (

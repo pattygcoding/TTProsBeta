@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import Form from './form';
-import PackageSelection from './package-selection';
-import AddOnSelection from './add-on-selection';
+import { Form } from './form';
+import { PackageSelection } from './package-selection';
+import { TailgatePackages } from "./tailgate-packages";
+import { AddOnSelection}  from './add-on-selection';
 import email from '../../config/email.json';
 import text from '../../config/text.json';
-import "./style.css";
-import TailgatePackages from "./tailgate-packages";
+import "./RequestPackage.css";
 
-export const RequestPackage = () => {
+const RequestPackage = () => {
 	const [formData, setFormdata] = useState({
 		first_name: "",
 		last_name: "",
@@ -89,15 +89,8 @@ export const RequestPackage = () => {
 			hear_about_us_question: formData.hear_about_us_question,
 		};
 		
-		emailjs
-			.send(
-				email.service_id,
-				email.template_id,
-				templateParams,
-				email.user_id
-			)
-			.then(
-				(result) => {
+		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
+			.then((result) => {
 					console.log(result.text);
 					setFormdata({
 						...formData,
@@ -157,7 +150,6 @@ export const RequestPackage = () => {
 	const handleTent = () => toggleAddOns('include_tent', 'selectedTent');
 	const handleCocktailTable = () => toggleAddOns('include_cocktail_table', 'selectedCocktailTable');
 	const handleSideTent = () => toggleAddOns('include_side_tent', 'selectedSideTent');
-	
 
 	const toggleAddOnAmounts = (key) => (e) => {
 		setFormdata((prevData) => ({
@@ -237,3 +229,5 @@ export const RequestPackage = () => {
 		</HelmetProvider>
 	);
 };
+
+export default RequestPackage;

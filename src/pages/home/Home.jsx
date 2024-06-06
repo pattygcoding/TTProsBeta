@@ -1,10 +1,10 @@
 import React from "react";
-import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import text from '../../config/text.json';
+import "./Home.css";
 
-export const Home = () => {
+const Home = () => {
 	return (
 		<HelmetProvider>
 			<section id="home" className="home">
@@ -49,3 +49,5 @@ export const Home = () => {
 		</HelmetProvider>
 	);
 };
+
+export default Home;

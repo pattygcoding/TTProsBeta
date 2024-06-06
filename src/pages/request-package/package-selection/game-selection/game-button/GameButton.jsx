@@ -1,5 +1,5 @@
 import React from 'react';
-import "./style.css";
+import "./GameButton.css";
 
 const GameButton = ({ game, formData, handleClick, selectedPackageType }) => {
   const isSelected = formData[`include_${game.key}`];

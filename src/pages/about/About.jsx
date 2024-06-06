@@ -1,11 +1,11 @@
 import React from "react";
-import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
 import image from '../../config/image.json';
 import text from '../../config/text.json';
+import "./About.css";
 
-export const About = () => {
+const About = () => {
 
 	return (
 		<HelmetProvider>
@@ -42,3 +42,5 @@ export const About = () => {
 		</HelmetProvider>
 	);
 };
+
+export default About;
