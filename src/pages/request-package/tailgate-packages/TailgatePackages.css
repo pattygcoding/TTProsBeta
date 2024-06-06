@@ -15,12 +15,6 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.cub:hover,
-.vip:hover {
-    transform: scale(1.05);
 }
 
 .imgtext {

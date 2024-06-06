@@ -25,3 +25,27 @@
 		transform: translateX(100%);
 	}
 }
+
+.pictures
+{
+	transition: transform 0.3s ease-in-out;
+}
+
+.pictures:hover
+{
+	transform: scale(1.05);
+}
+
+.contact__form .form-control {
+	padding: 1.375rem 0.75rem;
+	line-height: 1.5;
+	color: var(--text-color);
+	background-color: var(--bg-color);
+	border-radius: 0 !important;
+	border: 1px solid var(--secondary-color);
+}
+
+.contact__form input.form-control {
+	margin-bottom: 2em;
+	height: calc(2.5em + 0.75rem + 2px);
+}

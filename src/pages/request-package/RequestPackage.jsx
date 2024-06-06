@@ -54,9 +54,11 @@ const RequestPackage = () => {
 	};
 
 	const handleSubmit = (e) => {
+		console.log(handleSubmit, "Section 0");
 		e.preventDefault();
+		console.log(handleSubmit, "Section 1");
 		setFormdata({ ...formData, loading: true });
-
+		console.log(handleSubmit, "Section 2");
 		const templateParams = {
 			first_name: formData.first_name,
 			last_name: formData.last_name,
@@ -88,7 +90,7 @@ const RequestPackage = () => {
 			additional_comment: formData.additional_comment,
 			hear_about_us_question: formData.hear_about_us_question,
 		};
-
+		console.log(handleSubmit, "Section 3");
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
 			.then((result) => {
 				console.log(result.text);
@@ -111,6 +113,8 @@ const RequestPackage = () => {
 					document.getElementsByClassName("co_alert")[0].scrollIntoView();
 				}
 			);
+
+			console.log(handleSubmit, "Section 4");
 	};
 
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
@@ -164,6 +168,10 @@ const RequestPackage = () => {
 	const handleCocktailTableAmount = toggleAddOnAmounts('cocktail_table_amount');
 	const handleSideTentAmount = toggleAddOnAmounts('side_tent_amount');
 
+	const handleScrollToForm = () => {
+		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+	};
+
 	return (
 		<HelmetProvider>
 			<Container>
@@ -179,8 +187,10 @@ const RequestPackage = () => {
 							<hr className="t_border my-4 ml-0" />
 						</Col>
 					</Row>
-					<TailgatePackages />
-					<Row className="sec_sp">
+					<div className="pictures" onClick={handleScrollToForm}>
+						<TailgatePackages />
+					</div>
+					<Row className="sec_sp" id="form-section">
 						<Col lg="12">
 							<Alert
 								variant={formData.variant}
@@ -221,6 +231,7 @@ const RequestPackage = () => {
 								handleSideTent={handleSideTent}
 								handleSideTentAmount={handleSideTentAmount}
 							/>
+							<form onSubmit={handleSubmit}>
 							<Row>
 								<Col lg="12" className="form-group">
 									<button className="btn ac_btn" type="submit" disabled={formData.loading}>
@@ -228,6 +239,7 @@ const RequestPackage = () => {
 									</button>
 								</Col>
 							</Row>
+							</form>
 						</Col>
 					</Row>
 				</Col>

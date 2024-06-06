@@ -18,15 +18,15 @@ const Menu = () => {
     <>
       <header className="fixed-top site__header">
         <div className="d-flex align-items-center justify-content-between">
-          <Link  className="navbar-brand nav_ac" to="/">
+          <Link className="navbar-brand nav_ac" to="/">
             {text.meta.logo}
           </Link>
           <div className="d-flex align-items-center">
-          <DarkLightMode />
-          <button className="menu__button  nav_ac" onClick={handleToggle}>
-            {!isActive ? <VscClose /> : <VscGrabber />}
-          </button>
-          
+            <DarkLightMode />
+            <button className="menu__button  nav_ac" onClick={handleToggle}>
+              {!isActive ? <VscClose /> : <VscGrabber />}
+            </button>
+
           </div>
         </div>
 
@@ -36,22 +36,21 @@ const Menu = () => {
               <div className="menu__container p-3">
                 <ul className="the_menu">
                   <li className="menu_item ">
-                  <Link  onClick={handleToggle} to="/" className="my-3">{text.menu.home}</Link>
+                    <Link onClick={handleToggle} to="/" className="my-3">{text.menu.home}</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/request-package" className="my-3">{text.menu.request_package}</Link>
-                  <li className="menu_item">
-                  <Link onClick={handleToggle} to="/gallery" className="my-3">{text.menu.gallery}</Link>
-                  </li>
+                    <Link onClick={handleToggle} to="/request-package" className="my-3">{text.menu.request_package}</Link>
                   </li>
                   <li className="menu_item">
-                  <Link onClick={handleToggle} to="/about" className="my-3">{text.menu.about_us}</Link>
+                    <Link onClick={handleToggle} to="/gallery" className="my-3">{text.menu.gallery}</Link>
                   </li>
                   <li className="menu_item">
-                  <a onClick={handleToggle} href={text.links.facebook} target="_blank" rel="noopener noreferrer" className="my-3">
-  {text.menu.facebook}
-</a>
-
+                    <Link onClick={handleToggle} to="/about" className="my-3">{text.menu.about_us}</Link>
+                  </li>
+                  <li className="menu_item">
+                    <a onClick={handleToggle} href={text.links.facebook} target="_blank" rel="noopener noreferrer" className="my-3">
+                      {text.menu.facebook}
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -67,7 +66,7 @@ const Menu = () => {
       <div className="br-bottom"></div>
       <div className="br-left"></div>
       <div className="br-right"></div>
-      
+
     </>
   );
 };

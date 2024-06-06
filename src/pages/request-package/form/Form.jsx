@@ -45,7 +45,6 @@ const Form = ({ formData, handleChange, handleSubmit, csrfToken }) => {
 						value={formData.phone_number || ""}
 						required
 						maxLength="14"
-						pattern="[0-9()\-]*"
 						onChange={handleChange}
 					/>
 				</Col>
