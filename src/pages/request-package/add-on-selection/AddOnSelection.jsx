@@ -4,29 +4,7 @@ import text from '../../../config/text.json';
 import "./AddOnSelection.css";
 import { AddOnOption } from './add-on-option';
 
-/*const AddOnOption = ({ selected, name, price, amount, onChange }) => {
-	return (
-		<div
-			className={`generic-box add_on_box ${selected ? 'selected-orange' : ''}`}
-			onClick={onChange}
-		>
-			{name} - ${price}{text.packages.form.per_game}
-			{selected && (
-				<div className="countbox">
-					<input
-						className="form-control"
-						type="number"
-						placeholder="Enter amount"
-						value={amount}
-						onChange={onChange}
-					/>
-				</div>
-			)}
-		</div>
-	);
-};*/
-
-const AddOnSelection = ({ formData, handleCooler, handleCoolerAmount, handleChair, handleChairAmount, handleTable, handleTableAmount, handleTent, handleTentAmount, handleCocktailTable, handleCocktailTableAmount, handleSideTent, handleSideTentAmount }) => {
+const AddOnSelection = ({ formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent }) => {
 	return (
 		<div>
 			<div>Select your add-ons:</div>

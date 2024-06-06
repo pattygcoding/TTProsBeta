@@ -1,10 +1,3 @@
-.add_on_container {
-	display: flex;
-	width: 100%;
-	flex-direction: column;
-	flex: 1;
-	margin-bottom: 1rem;
-}
 .add_on_option {
 	display: flex;
 }

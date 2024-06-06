@@ -5,7 +5,7 @@ import { Container, Row, Col, Alert } from "react-bootstrap";
 import { Form } from './form';
 import { PackageSelection } from './package-selection';
 import { TailgatePackages } from "./tailgate-packages";
-import { AddOnSelection}  from './add-on-selection';
+import { AddOnSelection } from './add-on-selection';
 import email from '../../config/email.json';
 import text from '../../config/text.json';
 import "./RequestPackage.css";
@@ -88,18 +88,18 @@ const RequestPackage = () => {
 			additional_comment: formData.additional_comment,
 			hear_about_us_question: formData.hear_about_us_question,
 		};
-		
+
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
 			.then((result) => {
-					console.log(result.text);
-					setFormdata({
-						...formData,
-						loading: false,
-						alertmessage: "SUCCESS! Thank you for your message",
-						variant: "success",
-						show: true,
-					});
-				},
+				console.log(result.text);
+				setFormdata({
+					...formData,
+					loading: false,
+					alertmessage: "SUCCESS! Thank you for your message",
+					variant: "success",
+					show: true,
+				});
+			},
 				(error) => {
 					console.log(error.text);
 					setFormdata({
@@ -179,7 +179,7 @@ const RequestPackage = () => {
 							<hr className="t_border my-4 ml-0" />
 						</Col>
 					</Row>
-					<TailgatePackages/>
+					<TailgatePackages />
 					<Row className="sec_sp">
 						<Col lg="12">
 							<Alert
@@ -192,6 +192,7 @@ const RequestPackage = () => {
 							</Alert>
 						</Col>
 						<Col className="align-items-center">
+							<Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
 							<PackageSelection
 								selectedPackageType={selectedPackageType}
 								handlePackageTypeChange={handlePackageTypeChange}
@@ -220,7 +221,13 @@ const RequestPackage = () => {
 								handleSideTent={handleSideTent}
 								handleSideTentAmount={handleSideTentAmount}
 							/>
-							<Form formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
+							<Row>
+								<Col lg="12" className="form-group">
+									<button className="btn ac_btn" type="submit" disabled={formData.loading}>
+										{formData.loading ? "Sending..." : "Send"}
+									</button>
+								</Col>
+							</Row>
 						</Col>
 					</Row>
 				</Col>
