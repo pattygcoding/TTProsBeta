@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/TTProsBeta/static/css/main.1bc555e3.css",
-    "main.js": "/TTProsBeta/static/js/main.92d6e77d.js",
-    "index.html": "/TTProsBeta/index.html"
+    "main.css": "/www.tigertailgatingpros.com/static/css/main.1bc555e3.css",
+    "main.js": "/www.tigertailgatingpros.com/static/js/main.d96840ef.js",
+    "index.html": "/www.tigertailgatingpros.com/index.html"
   },
   "entrypoints": [
     "static/css/main.1bc555e3.css",
-    "static/js/main.92d6e77d.js"
+    "static/js/main.d96840ef.js"
   ]
 }
