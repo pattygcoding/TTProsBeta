@@ -9,7 +9,7 @@ const AddOnOption = ({ selected, name, price, amount, onChange }) => {
 			onClick={onChange}
 		>
 			{name} - ${price}{text.packages.form.per_game}
-			{selected && (
+			{/*selected && (
 				<div className="countbox">
 					<input
 						className="form-control"
@@ -19,7 +19,7 @@ const AddOnOption = ({ selected, name, price, amount, onChange }) => {
 						onChange={onChange}
 					/>
 				</div>
-			)}
+			)*/}
 		</div>
 	);
 }
