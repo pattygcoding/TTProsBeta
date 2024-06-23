@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/TTProsBeta/static/css/main.b1031497.css",
-    "main.js": "/TTProsBeta/static/js/main.5098d23c.js",
+    "main.css": "/TTProsBeta/static/css/main.1bc555e3.css",
+    "main.js": "/TTProsBeta/static/js/main.92d6e77d.js",
     "index.html": "/TTProsBeta/index.html"
   },
   "entrypoints": [
-    "static/css/main.b1031497.css",
-    "static/js/main.5098d23c.js"
+    "static/css/main.1bc555e3.css",
+    "static/js/main.92d6e77d.js"
   ]
 }
