@@ -189,7 +189,7 @@ const TailgatePackages = () => {
 							</Alert>
 						</Col>
 						<Col className="align-items-center">
-							<ContactForms formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
+							<ContactForms formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} style={{ background: "black" }} />
 							<PackageSelection
 								selectedPackageType={selectedPackageType}
 								handlePackageTypeChange={handlePackageTypeChange}
@@ -202,6 +202,7 @@ const TailgatePackages = () => {
 								handleGameSix={handleGameSix}
 								handleGameSeven={handleGameSeven}
 								formData={formData}
+								style={{ background: "black" }}
 							/>
 							<AddOnSelection
 								formData={formData}
@@ -211,7 +212,64 @@ const TailgatePackages = () => {
 								handleTent={handleTent}
 								handleCocktailTable={handleCocktailTable}
 								handleSideTent={handleSideTent}
+								style={{ background: "black" }}
 							/>
+							<Row>
+								<Col lg="6" className="form-group">
+									<label htmlFor="lot_number">Lot Number:</label>
+									<input
+										type="number"
+										className="form-control"
+										id="lot_number"
+										name="lot_number"
+										value={formData.lot_number}
+										onChange={handleChange}
+										style={{ background: "black", color: "white" }}
+									/>
+								</Col>
+								<Col lg="6" className="form-group">
+									<label htmlFor="spot_number">Spot Number:</label>
+									<input
+										type="number"
+										className="form-control"
+										id="spot_number"
+										name="spot_number"
+										value={formData.spot_number}
+										onChange={handleChange}
+										style={{ background: "black", color: "white" }}
+									/>
+								</Col>
+							</Row>
+							<form onSubmit={handleSubmit}>
+								<Row>
+									<Col lg="12" className="form-group">
+										<label htmlFor="additional_comment">Additional Comment:</label>
+										<textarea
+											className="form-control"
+											id="additional_comment"
+											name="additional_comment"
+											value={formData.additional_comment}
+											onChange={handleChange}
+											style={{ background: "black", color: "white" }}
+										></textarea>
+									</Col>
+								</Row>
+								<Row>
+									<Col lg="12" className="form-group">
+										<label htmlFor="hear_about_us_question">How did you hear about us?</label>
+										<textarea
+											className="form-control"
+											id="hear_about_us_question"
+											name="hear_about_us_question"
+											value={formData.hear_about_us_question}
+											onChange={handleChange}
+											style={{ background: "black", color: "white" }}
+										></textarea>
+									</Col>
+								</Row>
+							</form>
+
+							<div style={{ height: "1rem" }}></div>
 							<form onSubmit={handleSubmit}>
 								<Row>
 									<Col lg="12" className="form-group">

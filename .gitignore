@@ -11,6 +11,9 @@
 # production
 /build
 
+# ignore email.json in ttp/src/config
+ttp/src/config/email.json
+
 # misc
 .DS_Store
 .env.local

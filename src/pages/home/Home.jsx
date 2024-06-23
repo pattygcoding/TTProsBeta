@@ -25,7 +25,7 @@ const Home = () => {
 								<p className="mb-1x" style={{ hyphens: 'none' }}>{text.home.description}</p>
 							</div>
 							<div>
-								<Link to="/request-package">
+								<Link to="/tailgate-packages">
 									<div id="button_p" className="ac_btn btn">
 										{text.home.request_package}
 										<div className="ring one"></div>
