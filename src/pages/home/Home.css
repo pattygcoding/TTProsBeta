@@ -89,8 +89,8 @@ section {
 	/* Safari and Chrome */
 	-moz-animation: slideshow 180s infinite;
 	/* Firefox */
-	width: 100%;
-	height: 100%;
+	width: 95%;
+	height: 95%;
 	background-size: cover;
 	background-position: center;
 }
