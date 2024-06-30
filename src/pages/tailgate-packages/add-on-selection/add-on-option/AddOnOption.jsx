@@ -1,5 +1,5 @@
 import React from 'react';
-import text from '../../../../config/text.json';
+import t from '../../../../config/text.json';
 import "./AddOnOption.css";
 
 const AddOnOption = ({ selected, name, price, amount, onChange }) => {
@@ -8,7 +8,7 @@ const AddOnOption = ({ selected, name, price, amount, onChange }) => {
 			className={`generic-box add_on_box ${selected ? 'selected-orange' : ''}`}
 			onClick={onChange}
 		>
-			{name} - ${price}{text.packages.form.per_game}
+			{name} - ${price}{t.packages.form.per_game}
 			{/*selected && (
 				<div className="countbox">
 					<input

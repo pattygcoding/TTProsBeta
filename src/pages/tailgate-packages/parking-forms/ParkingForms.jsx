@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from "react-bootstrap";
-import "./ParkingForms.css";
 
 const ParkingForms = ({ formData, handleChange }) => {
     return (

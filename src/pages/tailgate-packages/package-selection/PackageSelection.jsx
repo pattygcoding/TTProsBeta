@@ -1,6 +1,6 @@
 // components/RequestPackage/PackageSelection.js
 import React from 'react';
-import text from '../../../config/text.json';
+import t from '../../../config/text.json';
 import { GameSelection } from './game-selection';
 import "./PackageSelection.css";
 
@@ -12,13 +12,13 @@ const PackageSelection = ({ selectedPackageType, handlePackageTypeChange, handle
 					className={`selectable-box orange-border ${selectedPackageType === 'cub' ? 'selected-orange' : ''}`}
 					onClick={() => handlePackageTypeChange('cub')}
 				>
-					{text.packages.form.cub}
+					{t.packages.form.cub}
 				</div>
 				<div
 					className={`selectable-box purple-border ${selectedPackageType === 'vip' ? 'selected-purple' : ''}`}
 					onClick={() => handlePackageTypeChange('vip')}
 				>
-					{text.packages.form.vip}
+					{t.packages.form.vip}
 				</div>
 			</div>
 			{selectedPackageType === 'cub' || selectedPackageType === 'vip' ? (

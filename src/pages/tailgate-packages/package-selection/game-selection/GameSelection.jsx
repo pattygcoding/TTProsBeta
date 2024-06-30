@@ -1,17 +1,17 @@
 import React from 'react';
-import text from '../../../../config/text.json';
+import t from '../../../../config/text.json';
 import { GameButton } from './game-button';
 import "./GameSelection.css";
 
 const GameSelection = ({ formData, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, selectedPackageType }) => {
 	const games = [
-		{ key: 'game_one', ...text.packages.game_one },
-		{ key: 'game_two', ...text.packages.game_two },
-		{ key: 'game_three', ...text.packages.game_three },
-		{ key: 'game_four', ...text.packages.game_four },
-		{ key: 'game_five', ...text.packages.game_five },
-		{ key: 'game_six', ...text.packages.game_six },
-		{ key: 'game_seven', ...text.packages.game_seven },
+		{ key: 'game_one', ...t.packages.game_one },
+		{ key: 'game_two', ...t.packages.game_two },
+		{ key: 'game_three', ...t.packages.game_three },
+		{ key: 'game_four', ...t.packages.game_four },
+		{ key: 'game_five', ...t.packages.game_five },
+		{ key: 'game_six', ...t.packages.game_six },
+		{ key: 'game_seven', ...t.packages.game_seven },
 	];
 
 	const handleClickMap = {
@@ -31,7 +31,7 @@ const GameSelection = ({ formData, handleSeason, handleGameOne, handleGameTwo, h
 					className={`${selectedPackageType === 'cub' ? 'cub-box' : 'vip-box'} full-box ${formData.include_season ? (selectedPackageType === 'cub' ? 'selected-orange' : 'selected-purple') : ''}`}
 					onClick={handleSeason}
 				>
-					{text.packages.season.name} - ${selectedPackageType === 'cub' ? text.packages.season.price_cub : text.packages.season.price_vip}
+					{t.packages.season.name} - ${selectedPackageType === 'cub' ? t.packages.season.price_cub : t.packages.season.price_vip}
 				</div>
 			</div>
 			<div className="game_select">
