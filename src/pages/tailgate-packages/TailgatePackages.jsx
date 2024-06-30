@@ -187,10 +187,8 @@ const TailgatePackages = () => {
 							<hr className="t_border my-4 ml-0" />
 						</Col>
 					</Row>
-					<div className="flex-container">
 					<div class="pictures responsive-image" onClick={handleScrollToForm}>
 						<PackageInfograph />
-					</div>
 					</div>
 					<Row className="sec_sp" id="form-section">
 						<Col className="align-items-center">

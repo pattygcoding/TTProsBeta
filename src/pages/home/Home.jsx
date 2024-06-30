@@ -50,10 +50,8 @@ const Home = () => {
 					<meta name="description" content={t.meta.description} />
 				</Helmet>
 				<div className="intro_sec d-block d-lg-flex align-items-center">
-					<div className="flex-container">
 						<div id="slideshow" className="h_bg-image order-1 order-lg-2 h-100 responsive-image" style={{ borderRadius: '4rem' }}>
 						</div>
-					</div>
 					<div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
 						<div className="align-self-center ">
 							<div className="intro mx-auto">
