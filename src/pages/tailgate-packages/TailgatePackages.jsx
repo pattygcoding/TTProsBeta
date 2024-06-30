@@ -7,7 +7,7 @@ import { PackageSelection } from './package-selection';
 import { PackageInfograph } from "./package-infograph";
 import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
-import email from '../../config/email_test.json';
+import email from '../../config/email.json';
 import text from '../../config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
