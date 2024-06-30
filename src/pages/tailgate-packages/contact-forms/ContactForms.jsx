@@ -3,9 +3,9 @@ import { Row, Col } from 'react-bootstrap';
 import { TextForm } from './text-form';
 import "./ContactForms.css";
 
-const ContactForms = ({ formData, handleChange, handleSubmit, csrfToken }) => {
+const ContactForms = ({ formData, handleChange, csrfToken }) => {
 	return (
-		<form onSubmit={handleSubmit} className="contact__form w-100" autoComplete="off">
+		<>
 			<input type="hidden" name="_csrf" value={csrfToken} />
 			<Row>
 				<Col lg="6" className="form-group">
@@ -48,7 +48,7 @@ const ContactForms = ({ formData, handleChange, handleSubmit, csrfToken }) => {
 					/>
 				</Col>
 			</Row>
-		</form>
+		</>
 	);
 };
 
