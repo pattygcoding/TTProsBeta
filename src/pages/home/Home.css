@@ -133,3 +133,12 @@
 	text-align: center;
 	box-sizing: border-box;
 }
+
+.responsive-image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	/* Ensures there's no extra space below the image */
+	margin: 0 auto;
+	/* Optional: Center the image horizontally */
+}

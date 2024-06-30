@@ -15,24 +15,25 @@
 	0% {
 		transform: translateX(-100%);
 	}
+
 	40% {
 		transform: translateX(0%);
 	}
+
 	60% {
 		transform: translateX(0%);
 	}
+
 	100% {
 		transform: translateX(100%);
 	}
 }
 
-.pictures
-{
+.pictures {
 	transition: transform 0.3s ease-in-out;
 }
 
-.pictures:hover
-{
+.pictures:hover {
 	transform: scale(1.05);
 }
 
@@ -48,4 +49,13 @@
 .contact__form input.form-control {
 	margin-bottom: 2em;
 	height: calc(2.5em + 0.75rem + 2px);
+}
+
+.responsive-image {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	/* Ensures there's no extra space below the image */
+	margin: 0 auto;
+	/* Optional: Center the image horizontally */
 }
