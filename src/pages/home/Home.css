@@ -134,6 +134,14 @@
 	box-sizing: border-box;
 }
 
+.flex-container {
+	display: flex;
+	justify-content: center;
+	/* Center the image horizontally */
+	align-items: center;
+	/* Center the image vertically */
+}
+
 .responsive-image {
 	max-width: 100%;
 	height: auto;

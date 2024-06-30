@@ -59,3 +59,12 @@
 	margin: 0 auto;
 	/* Optional: Center the image horizontally */
 }
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+	/* Center the image horizontally */
+	align-items: center;
+	/* Center the image vertically */
+}
+
