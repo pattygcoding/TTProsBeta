@@ -1,16 +1,11 @@
-section {
-	flex: 1 0 auto;
-	position: relative;
-	width: 100%;
-	transition: all .5s ease-in;
-}
-
 #slideshow {
-	width: 95%;
-	height: 95%;
-	background-size: contain;
-	background-position: center;
-	transition: background-image 1s ease-in-out;
+    position: relative;
+    background-size: cover; /* Ensures the image covers the container without repeating */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    transition: background-image 1s ease-in-out;
+    border-radius: 4rem; /* Ensure the border radius is applied */
+    overflow: hidden; /* Ensure no overflow if using pseudo-elements */
 }
 
 .hidden {
