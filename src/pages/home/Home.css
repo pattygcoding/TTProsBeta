@@ -1,11 +1,15 @@
 #slideshow {
-    position: relative;
-    background-size: cover; /* Ensures the image covers the container without repeating */
-    background-position: center;
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    transition: background-image 1s ease-in-out;
-    border-radius: 4rem; /* Ensure the border radius is applied */
-    overflow: hidden; /* Ensure no overflow if using pseudo-elements */
+	position: relative;
+	background-size: cover;
+	/* Ensures the image covers the container without repeating */
+	background-position: center;
+	background-repeat: no-repeat;
+	/* Prevents the image from repeating */
+	transition: background-image 1s ease-in-out;
+	border-radius: 4rem;
+	/* Ensure the border radius is applied */
+	overflow: hidden;
+	/* Ensure no overflow if using pseudo-elements */
 }
 
 .hidden {

@@ -22,7 +22,7 @@ const Gallery = () => {
             <Container className="Gallery-header">
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>{t.gallery.title} | ${t.meta.title}</title>
+                    <title>{t.gallery.title} | {t.meta.title}</title>
                     <meta name="description" content={t.meta.description} />
                 </Helmet>
                 <Col>

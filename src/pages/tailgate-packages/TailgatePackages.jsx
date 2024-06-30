@@ -187,7 +187,7 @@ const TailgatePackages = () => {
 							<hr className="t_border my-4 ml-0" />
 						</Col>
 					</Row>
-					<div className="pictures" onClick={handleScrollToForm}>
+					<div class="pictures img-fluid" onClick={handleScrollToForm}>
 						<PackageInfograph />
 					</div>
 					<Row className="sec_sp" id="form-section">
