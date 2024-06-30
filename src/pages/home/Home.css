@@ -8,7 +8,7 @@ section {
 #slideshow {
 	width: 95%;
 	height: 95%;
-	background-size: cover;
+	background-size: contain;
 	background-position: center;
 	transition: background-image 1s ease-in-out;
 }
