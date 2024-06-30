@@ -7,7 +7,7 @@ import { PackageSelection } from './package-selection';
 import { PackageInfograph } from "./package-infograph";
 import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
-import email from '../../config/email.json';
+import email from '../../config/email_test.json';
 import text from '../../config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
@@ -59,69 +59,77 @@ const TailgatePackages = () => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		const form = event.target;
 
-		if (form.checkValidity()) {
-			setFormData({ ...formData, loading: true });
+		const requiredFields = ['first_name', 'last_name', 'email', 'phone_number'];
+		const missingFields = requiredFields.filter(field => !formData[field]);
 
-			const templateParams = {
-				first_name: formData.first_name,
-				last_name: formData.last_name,
-				email: formData.email,
-				phone_number: formData.phone_number,
-				package_type: selectedPackageType,
-				include_season: formData.include_season ? (text.packages.season?.name || "") : "",
-				include_game_one: formData.include_game_one ? (text.packages.game_one?.name || "") : "",
-				include_game_two: formData.include_game_two ? (text.packages.game_two?.name || "") : "",
-				include_game_three: formData.include_game_three ? (text.packages.game_three?.name || "") : "",
-				include_game_four: formData.include_game_four ? (text.packages.game_four?.name || "") : "",
-				include_game_five: formData.include_game_five ? (text.packages.game_five?.name || "") : "",
-				include_game_six: formData.include_game_six ? (text.packages.game_six?.name || "") : "",
-				include_game_seven: formData.include_game_seven ? (text.packages.game_seven?.name || "") : "",
-				include_cooler: formData.include_cooler ? (text.packages.add_ons.cooler?.name || "") : "[-]",
-				include_chair: formData.include_chair ? (text.packages.add_ons.chair?.name || "") : "[-]",
-				include_table: formData.include_table ? (text.packages.add_ons.table?.name || "") : "[-]",
-				include_tent: formData.include_tent ? (text.packages.add_ons.tent?.name || "") : "[-]",
-				include_cocktail_table: formData.include_cocktail_table ? (text.packages.add_ons.cocktail_table?.name || "") : "[-]",
-				include_side_tent: formData.include_side_tent ? (text.packages.add_ons.side_tent?.name || "") : "[-]",
-				cooler_amount: formData.cooler_amount ? (text.packages?.count + formData.cooler_amount || "") : "",
-				chair_amount: formData.chair_amount ? (text.packages?.count + formData.chair_amount || "") : "",
-				table_amount: formData.table_amount ? (text.packages?.count + formData.table_amount || "") : "",
-				tent_amount: formData.tent_amount ? (text.packages?.count + formData.tent_amount || "") : "",
-				cocktail_table_amount: formData.cocktail_table_amount ? (text.packages?.count + formData.cocktail_table_amount || "") : "",
-				side_tent_amount: formData.side_tent_amount ? (text.packages?.count + formData.side_tent_amount || "") : "",
-				lot_number: formData.lot_number,
-				spot_number: formData.spot_number,
-				additional_comment: formData.additional_comment,
-				hear_about_us_question: formData.hear_about_us_question,
-			};
+		if (missingFields.length > 0) {
+			setFormData({
+				...formData,
+				alertmessage: "Please fill out all required fields.",
+				variant: "danger",
+				show: true,
+			});
+			document.getElementsByClassName("co_alert")[0].scrollIntoView();
+			return;
+		}
 
-			emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
-				.then((result) => {
-					console.log(result.text);
+		setFormData({ ...formData, loading: true });
+
+		const templateParams = {
+			first_name: formData.first_name,
+			last_name: formData.last_name,
+			email: formData.email,
+			phone_number: formData.phone_number,
+			package_type: selectedPackageType,
+			include_season: formData.include_season ? (text.packages.season?.name || "") : "",
+			include_game_one: formData.include_game_one ? (text.packages.game_one?.name || "") : "",
+			include_game_two: formData.include_game_two ? (text.packages.game_two?.name || "") : "",
+			include_game_three: formData.include_game_three ? (text.packages.game_three?.name || "") : "",
+			include_game_four: formData.include_game_four ? (text.packages.game_four?.name || "") : "",
+			include_game_five: formData.include_game_five ? (text.packages.game_five?.name || "") : "",
+			include_game_six: formData.include_game_six ? (text.packages.game_six?.name || "") : "",
+			include_game_seven: formData.include_game_seven ? (text.packages.game_seven?.name || "") : "",
+			include_cooler: formData.include_cooler ? (text.packages.add_ons.cooler?.name || "") : "[-]",
+			include_chair: formData.include_chair ? (text.packages.add_ons.chair?.name || "") : "[-]",
+			include_table: formData.include_table ? (text.packages.add_ons.table?.name || "") : "[-]",
+			include_tent: formData.include_tent ? (text.packages.add_ons.tent?.name || "") : "[-]",
+			include_cocktail_table: formData.include_cocktail_table ? (text.packages.add_ons.cocktail_table?.name || "") : "[-]",
+			include_side_tent: formData.include_side_tent ? (text.packages.add_ons.side_tent?.name || "") : "[-]",
+			cooler_amount: formData.cooler_amount ? (text.packages?.count + formData.cooler_amount || "") : "",
+			chair_amount: formData.chair_amount ? (text.packages?.count + formData.chair_amount || "") : "",
+			table_amount: formData.table_amount ? (text.packages?.count + formData.table_amount || "") : "",
+			tent_amount: formData.tent_amount ? (text.packages?.count + formData.tent_amount || "") : "",
+			cocktail_table_amount: formData.cocktail_table_amount ? (text.packages?.count + formData.cocktail_table_amount || "") : "",
+			side_tent_amount: formData.side_tent_amount ? (text.packages?.count + formData.side_tent_amount || "") : "",
+			lot_number: formData.lot_number,
+			spot_number: formData.spot_number,
+			additional_comment: formData.additional_comment,
+			hear_about_us_question: formData.hear_about_us_question,
+		};
+
+		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
+			.then((result) => {
+				console.log(result.text);
+				setFormData({
+					...formData,
+					loading: false,
+					alertmessage: "SUCCESS! Thank you for your message",
+					variant: "success",
+					show: true,
+				});
+			},
+				(error) => {
+					console.log(error.text);
 					setFormData({
 						...formData,
 						loading: false,
-						alertmessage: "SUCCESS! Thank you for your message",
-						variant: "success",
+						alertmessage: `Failed to send! ${error.text}`,
+						variant: "danger",
 						show: true,
 					});
-				},
-					(error) => {
-						console.log(error.text);
-						setFormData({
-							...formData,
-							loading: false,
-							alertmessage: `Failed to send! ${error.text}`,
-							variant: "danger",
-							show: true,
-						});
-						document.getElementsByClassName("co_alert")[0].scrollIntoView();
-					}
-				);
-		} else {
-			form.reportValidity();
-		}
+					document.getElementsByClassName("co_alert")[0].scrollIntoView();
+				});
 	};
 
 	const handlePackageTypeChange = (packageType) => {
@@ -217,11 +225,11 @@ const TailgatePackages = () => {
 									handleSideTent={handleSideTent}
 									style={{ background: "black" }}
 								/>
-								<ParkingForms 
+								<ParkingForms
 									formData={formData}
 									handleChange={handleChange}
 								/>
-								<AdditionalInfoForms 
+								<AdditionalInfoForms
 									formData={formData}
 									handleChange={handleChange}
 								/>
@@ -232,6 +240,13 @@ const TailgatePackages = () => {
 										</button>
 									</Col>
 								</Row>
+								<div id="alert-section">
+									{formData.show && (
+										<Alert variant={formData.variant} onClose={() => setFormData({ ...formData, show: false })} dismissible>
+											{formData.alertmessage}
+										</Alert>
+									)}
+								</div>
 							</form>
 						</Col>
 					</Row>
