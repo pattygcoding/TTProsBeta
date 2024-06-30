@@ -5,10 +5,12 @@ import { Container, Row, Col, Alert } from "react-bootstrap";
 import { ContactForms } from './contact-forms';
 import { PackageSelection } from './package-selection';
 import { PackageInfograph } from "./package-infograph";
+import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
 import email from '../../config/email.json';
 import text from '../../config/text.json';
 import "./TailgatePackages.css";
+import { AdditionalInfoForms } from "./additional-info-forms";
 
 const TailgatePackages = () => {
 	const [formData, setFormData] = useState({
@@ -188,6 +190,9 @@ const TailgatePackages = () => {
 									handleChange={handleChange}
 									style={{ background: "black" }}
 								/>
+								<Row>
+									<Col lg="12" className="mb-4"></Col>
+								</Row>
 								<PackageSelection
 									selectedPackageType={selectedPackageType}
 									handlePackageTypeChange={handlePackageTypeChange}
@@ -212,58 +217,14 @@ const TailgatePackages = () => {
 									handleSideTent={handleSideTent}
 									style={{ background: "black" }}
 								/>
-								<Row>
-									<Col lg="6" className="form-group">
-										<label htmlFor="lot_number">Lot Number:</label>
-										<input
-											type="number"
-											className="form-control"
-											id="lot_number"
-											name="lot_number"
-											value={formData.lot_number}
-											onChange={handleChange}
-											style={{ background: "black", color: "white" }}
-										/>
-									</Col>
-									<Col lg="6" className="form-group">
-										<label htmlFor="spot_number">Spot Number:</label>
-										<input
-											type="number"
-											className="form-control"
-											id="spot_number"
-											name="spot_number"
-											value={formData.spot_number}
-											onChange={handleChange}
-											style={{ background: "black", color: "white" }}
-										/>
-									</Col>
-								</Row>
-								<Row>
-									<Col lg="12" className="form-group">
-										<label htmlFor="additional_comment">Additional Comment:</label>
-										<textarea
-											className="form-control"
-											id="additional_comment"
-											name="additional_comment"
-											value={formData.additional_comment}
-											onChange={handleChange}
-											style={{ background: "black", color: "white" }}
-										></textarea>
-									</Col>
-								</Row>
-								<Row>
-									<Col lg="12" className="form-group">
-										<label htmlFor="hear_about_us_question">How did you hear about us?</label>
-										<textarea
-											className="form-control"
-											id="hear_about_us_question"
-											name="hear_about_us_question"
-											value={formData.hear_about_us_question}
-											onChange={handleChange}
-											style={{ background: "black", color: "white" }}
-										></textarea>
-									</Col>
-								</Row>
+								<ParkingForms 
+									formData={formData}
+									handleChange={handleChange}
+								/>
+								<AdditionalInfoForms 
+									formData={formData}
+									handleChange={handleChange}
+								/>
 								<Row>
 									<Col lg="12" className="form-group">
 										<button className="btn ac_btn" type="submit" disabled={formData.loading}>
