@@ -6,7 +6,7 @@ import { ContactForms } from './contact-forms';
 import { PackageSelection } from './package-selection';
 import { PackageInfograph } from "./package-infograph";
 import { AddOnSelection } from './add-on-selection';
-import email from '../../config/email.json';
+import email from '../../config/email_test.json';
 import text from '../../config/text.json';
 import "./TailgatePackages.css";
 
@@ -46,6 +46,8 @@ const TailgatePackages = () => {
 		variant: "",
 	});
 
+	const [recaptchaToken, setRecaptchaToken] = useState(null);
+
 	const handleChange = (e) => {
 		setFormdata({
 			...formData,
@@ -53,12 +55,13 @@ const TailgatePackages = () => {
 		});
 	};
 
-	const handleSubmit = (e) => {
-		console.log(handleSubmit, "Section 0");
-		e.preventDefault();
-		console.log(handleSubmit, "Section 1");
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		if (!recaptchaToken) {
+			alert('Please complete the reCAPTCHA');
+			return;
+		}
 		setFormdata({ ...formData, loading: true });
-		console.log(handleSubmit, "Section 2");
 		const templateParams = {
 			first_name: formData.first_name,
 			last_name: formData.last_name,
@@ -90,7 +93,6 @@ const TailgatePackages = () => {
 			additional_comment: formData.additional_comment,
 			hear_about_us_question: formData.hear_about_us_question,
 		};
-		console.log(handleSubmit, "Section 3");
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
 			.then((result) => {
 				console.log(result.text);
@@ -113,8 +115,10 @@ const TailgatePackages = () => {
 					document.getElementsByClassName("co_alert")[0].scrollIntoView();
 				}
 			);
+	};
 
-		console.log(handleSubmit, "Section 4");
+	const handleRecaptchaChange = (token) => {
+		setRecaptchaToken(token);
 	};
 
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
@@ -178,18 +182,13 @@ const TailgatePackages = () => {
 						<PackageInfograph />
 					</div>
 					<Row className="sec_sp" id="form-section">
-						<Col lg="12">
-							<Alert
-								variant={formData.variant}
-								className={`rounded-0 co_alert ${formData.show ? "d-block" : "d-none"}`}
-								onClose={() => setFormdata({ ...formData, show: false })}
-								dismissible
-							>
-								<p className="my-0">{formData.alertmessage}</p>
-							</Alert>
-						</Col>
 						<Col className="align-items-center">
-							<ContactForms formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} style={{ background: "black" }} />
+							<ContactForms
+								formData={formData}
+								handleChange={handleChange}
+								handleSubmit={handleSubmit}
+								style={{ background: "black" }}
+							/>
 							<PackageSelection
 								selectedPackageType={selectedPackageType}
 								handlePackageTypeChange={handlePackageTypeChange}
@@ -279,6 +278,16 @@ const TailgatePackages = () => {
 									</Col>
 								</Row>
 							</form>
+						</Col>
+						<Col lg="12">
+							<Alert
+								variant={formData.variant}
+								className={`rounded-0 co_alert ${formData.show ? "d-block" : "d-none"}`}
+								onClose={() => setFormdata({ ...formData, show: false })}
+								dismissible
+							>
+								<p className="my-0">{formData.alertmessage}</p>
+							</Alert>
 						</Col>
 					</Row>
 				</Col>

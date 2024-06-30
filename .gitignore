@@ -11,8 +11,10 @@
 # production
 /build
 
-# ignore email.json in ttp/src/config
+# ignore these 
 src/config/email.json
+src/config/email_test.json
+server.mjs
 
 # misc
 .DS_Store
