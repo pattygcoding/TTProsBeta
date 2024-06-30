@@ -46,7 +46,7 @@ const Home = () => {
 			<section id="home" className="home">
 				<Helmet>
 					<meta charSet="utf-8" />
-					<title> {text.meta.title}</title>
+					<title>{text.home.title} | {text.meta.title}</title>
 					<meta name="description" content={text.meta.description} />
 				</Helmet>
 				<div className="intro_sec d-block d-lg-flex align-items-center">

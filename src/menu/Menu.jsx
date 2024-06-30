@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
 import { DarkLightMode } from "../components/dark-light-mode";
-import text from '../config/text.json';
+import t from '../config/text.json';
 import "./Menu.css";
 
 const Menu = () => {
@@ -19,7 +19,7 @@ const Menu = () => {
       <header className="fixed-top site__header">
         <div className="d-flex align-items-center justify-content-between">
           <Link className="navbar-brand nav_ac" to="/">
-            {text.meta.logo}
+            {t.meta.logo}
           </Link>
           <div className="d-flex align-items-center">
             <DarkLightMode />
@@ -36,20 +36,20 @@ const Menu = () => {
               <div className="menu__container p-3">
                 <ul className="the_menu">
                   <li className="menu_item ">
-                    <Link onClick={handleToggle} to="/" className="my-3">{text.menu.home}</Link>
+                    <Link onClick={handleToggle} to="/" className="my-3">{t.menu.home}</Link>
                   </li>
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/tailgate-packages" className="my-3">{text.menu.tailgate_packages}</Link>
+                    <Link onClick={handleToggle} to="/tailgate-packages" className="my-3">{t.menu.tailgate_packages}</Link>
                   </li>
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/gallery" className="my-3">{text.menu.gallery}</Link>
+                    <Link onClick={handleToggle} to="/gallery" className="my-3">{t.menu.gallery}</Link>
                   </li>
                   <li className="menu_item">
-                    <Link onClick={handleToggle} to="/about" className="my-3">{text.menu.about_us}</Link>
+                    <Link onClick={handleToggle} to="/about" className="my-3">{t.menu.about_us}</Link>
                   </li>
                   <li className="menu_item">
-                    <a onClick={handleToggle} href={text.links.facebook} target="_blank" rel="noopener noreferrer" className="my-3">
-                      {text.menu.facebook}
+                    <a onClick={handleToggle} href={t.links.facebook} target="_blank" rel="noopener noreferrer" className="my-3">
+                      {t.menu.facebook}
                     </a>
                   </li>
                 </ul>
@@ -58,7 +58,7 @@ const Menu = () => {
           </div>
           <div className="menu_footer d-flex flex-column flex-md-row justify-content-between align-items-md-center position-absolute w-100 p-3">
 
-            <p className="copyright m-0">{text.watermark}</p>
+            <p className="copyright m-0">{t.watermark}</p>
           </div>
         </div>
       </header>

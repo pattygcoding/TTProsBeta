@@ -177,7 +177,7 @@ const TailgatePackages = () => {
 			<Container>
 				<Helmet>
 					<meta charSet="utf-8" />
-					<title>{t.meta.title}</title>
+					<title>{t.packages.select_title} | {t.meta.title}</title>
 					<meta name="description" content={t.meta.description} />
 				</Helmet>
 				<Col>
