@@ -4,8 +4,10 @@ import { TextForm } from './text-form';
 import "./ContactForms.css";
 
 const ContactForms = ({ formData, handleChange, csrfToken }) => {
+
 	return (
 		<>
+			<div style={{ padding: '1rem' }} />
 			<input type="hidden" name="_csrf" value={csrfToken} />
 			<Row>
 				<Col lg="6" className="form-group">
@@ -25,6 +27,7 @@ const ContactForms = ({ formData, handleChange, csrfToken }) => {
 					/>
 				</Col>
 			</Row>
+			<div style={{padding: '0.3rem'}}/>
 			<Row>
 				<Col lg="6" className="form-group">
 					<TextForm
@@ -48,6 +51,7 @@ const ContactForms = ({ formData, handleChange, csrfToken }) => {
 					/>
 				</Col>
 			</Row>
+			<div style={{ padding: '1rem' }} />
 		</>
 	);
 };

@@ -15,8 +15,6 @@ import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
 
 const TailgatePackages = () => {
-
-	
 	const [formData, setFormData] = useState({
 		first_name: "",
 		last_name: "",
@@ -51,8 +49,6 @@ const TailgatePackages = () => {
 		alertmessage: "",
 		variant: "",
 	});
-
-	
 
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
 
@@ -184,41 +180,22 @@ const TailgatePackages = () => {
 	return (
 		<HelmetProvider>
 			<Container>
-				<TabLabel label={t.packages.select_title}/>
+				<TabLabel label={t.packages.select_title} />
 				<Col>
-					<PageTitle title={t.packages.select_title}/>
+					<PageTitle title={t.packages.select_title} />
 					<Col>
-					<div class="pictures overflow" onClick={handleScrollToForm}>
-						<PackageInfograph />
-					</div>
+						<div class="pictures " onClick={handleScrollToForm}>
+							<PackageInfograph />
+						</div>
 					</Col>
 					<Row className="sec_sp" id="form-section">
 						<Col className="align-items-center">
 							<form onSubmit={handleSubmit} noValidate>
-								<ContactForms
-									formData={formData}
-									handleChange={handleChange}
-									style={{ background: "black" }}
-								/>
-								<Row>
-									<Col lg="12" className="mb-4"></Col>
-								</Row>
-								<PackageSelection
-									{...gameHandlers}
-									style={{ background: "black" }}
-								/>
-								<AddOnSelection
-									{...addOnHandlers}
-									style={{ background: "black" }}
-								/>
-								<ParkingForms
-									formData={formData}
-									handleChange={handleChange}
-								/>
-								<AdditionalInfoForms
-									formData={formData}
-									handleChange={handleChange}
-								/>
+								<ContactForms formData={formData} handleChange={handleChange} style={{ background: "black" }} />
+								<PackageSelection {...gameHandlers} style={{ background: "black" }} />
+								<AddOnSelection {...addOnHandlers} style={{ background: "black" }} />
+								<ParkingForms formData={formData} handleChange={handleChange} />
+								<AdditionalInfoForms formData={formData} handleChange={handleChange} />
 								<Row>
 									<Col lg="12" className="form-group">
 										<button className="btn ac_btn" type="submit" disabled={formData.loading}>

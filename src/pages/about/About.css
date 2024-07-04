@@ -2,11 +2,6 @@
     margin-bottom: calc(3rem + 5.128vw);
 }
 
-.overflow {
-    overflow-x: auto;
-    overflow-y: auto;
-}
-
 .table td,
 .table th {
     color: var(--text-color);

@@ -47,7 +47,7 @@ const Home = () => {
 			<section id="home" className="home">
 				<TabLabel label={t.home.title} />
 				<div className="intro_sec d-block d-lg-flex align-items-center">
-					<div id="slideshow" className="h_bg-image order-1 order-lg-2 h-100 overflow sec_sp" style={{ borderRadius: '4rem' }}>
+					<div id="slideshow" className="h_bg-image order-1 order-lg-2 h-100 sec_sp" style={{ borderRadius: '4rem' }}>
 					</div>
 					<div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
 						<div className="align-self-center ">

@@ -6,9 +6,9 @@ import { AddOnOption } from './add-on-option';
 
 const AddOnSelection = ({ formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent }) => {
 	return (
-		<div>
-			<div>Select your add-ons:</div>
-			<div className="add_on_container">
+		<div style={{ paddingTop: '1rem' }} >
+			<div >Select your add-ons:</div>
+			<div className="add_on_container" style={{ paddingTop: '0.3rem' }}>
 				<AddOnOption
 					selected={formData.include_cooler}
 					name={t.packages.add_ons.cooler.name}

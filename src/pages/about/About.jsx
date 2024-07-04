@@ -15,7 +15,7 @@ const About = () => {
 				<TabLabel label={t.about.title} />
 				<Col>
 				<PageTitle title={t.about.title}/>
-					<Row className="sec_sp overflow">
+					<Row className="sec_sp">
 						<img src={image.about.display} alt="" style={{ borderRadius: '4rem' }} />
 						<div className="d-flex custom-gap align-items-stretch">
 							<div className="col-lg-6">

@@ -4,6 +4,7 @@ import { Row, Col } from "react-bootstrap";
 const AdditionalInfoForms = ({ formData, handleChange }) => {
     return (
         <>
+            <div style={{ paddingBottom: '1rem' }} />
             <Row>
                 <Col lg="12" className="form-group">
                     <label htmlFor="additional_comment">Additional Comment:</label>
@@ -17,6 +18,7 @@ const AdditionalInfoForms = ({ formData, handleChange }) => {
                     ></textarea>
                 </Col>
             </Row>
+            <div style={{ paddingBottom: '1rem' }} />
             <Row>
                 <Col lg="12" className="form-group">
                     <label htmlFor="hear_about_us_question">How did you hear about us?</label>
@@ -30,6 +32,7 @@ const AdditionalInfoForms = ({ formData, handleChange }) => {
                     ></textarea>
                 </Col>
             </Row>
+            <div style={{ paddingBottom: '1rem' }} />
         </>
     );
 };

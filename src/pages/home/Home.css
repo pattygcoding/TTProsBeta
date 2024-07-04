@@ -141,7 +141,3 @@
 	align-items: center;
 	/* Center the image vertically */
 }
-.overflow {
-    overflow-x: auto;
-    overflow-y: auto;
-}
