@@ -9,7 +9,7 @@ import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "../../components/tab-label";
 import { PageTitle } from "../../components/page-title";
-import email from '../../config/email_test.json';
+import email from '../../config/email.json';
 import t from '../../config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
