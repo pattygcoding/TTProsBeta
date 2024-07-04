@@ -144,6 +144,7 @@
 
 .responsive-image {
 	max-width: 100%;
+	width: 100%;
 	height: auto;
 	display: block;
 	/* Ensures there's no extra space below the image */
