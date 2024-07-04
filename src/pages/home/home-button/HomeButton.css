@@ -141,7 +141,13 @@
 	align-items: center;
 	/* Center the image vertically */
 }
-.overflow {
-    overflow-x: auto;
-    overflow-y: auto;
+
+.responsive-image {
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	display: block;
+	/* Ensures there's no extra space below the image */
+	margin: 0 auto;
+	/* Optional: Center the image horizontally */
 }

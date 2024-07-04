@@ -5,8 +5,7 @@ import "./PackageInfograph.css";
 
 const PackageInfograph = () => {
 	return (
-		<Col>
-			<Row className="sec_sp">
+			<Row>
 				<Col>
 					<div className="cub" style={{ borderRadius: '4rem 0 0 4rem' }} >
 						<div className="imgtext">
@@ -28,7 +27,6 @@ const PackageInfograph = () => {
 					</div>
 				</Col>
 			</Row>
-		</Col>
 	);
 };
 

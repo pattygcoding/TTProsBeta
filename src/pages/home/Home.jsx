@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+import { HomeButton } from './home-button';
 import t from '../../config/text.json';
 import "./Home.css";
+import { TabLabel } from "../../components/tab-label";
+
 
 const Home = () => {
 
@@ -40,42 +42,22 @@ const Home = () => {
 		return () => clearInterval(interval); // Cleanup interval on component unmount
 	}, []);
 
-
 	return (
 		<HelmetProvider>
 			<section id="home" className="home">
-				<Helmet>
-					<meta charSet="utf-8" />
-					<title>{t.home.title} | {t.meta.title}</title>
-					<meta name="description" content={t.meta.description} />
-				</Helmet>
+				<TabLabel label={t.home.title} />
 				<div className="intro_sec d-block d-lg-flex align-items-center">
-						<div id="slideshow" className="h_bg-image order-1 order-lg-2 responsive-image sec_sp" style={{ borderRadius: '4rem' }}>
-						</div>
+					<div id="slideshow" className="h_bg-image order-1 order-lg-2 h-100 overflow sec_sp" style={{ borderRadius: '4rem' }}>
+					</div>
 					<div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
 						<div className="align-self-center ">
 							<div className="intro mx-auto">
 								<h1 className="mb-1x" style={{ fontSize: '2.5rem' }}>{t.home.title}</h1>
 								<p className="mb-1x" style={{ hyphens: 'none' }}>{t.home.description}</p>
 							</div>
-							<div>
-								<Link to="/tailgate-packages">
-									<div id="button_p" className="ac_btn btn">
-										{t.home.request_package}
-										<div className="ring one"></div>
-										<div className="ring two"></div>
-										<div className="ring three"></div>
-									</div>
-								</Link>
-								<Link to="/gallery">
-									<div id="button_p" className="ac_btn btn">
-										{t.home.gallery}
-										<div className="ring one"></div>
-										<div className="ring two"></div>
-										<div className="ring three"></div>
-									</div>
-								</Link>
-							</div>
+							<HomeButton page="/tailgate-packages" label={t.home.request_package} />
+							<HomeButton page="/gallery" label={t.home.gallery} />
+							<HomeButton page="/about" label={t.home.about_us} />
 						</div>
 					</div>
 				</div>

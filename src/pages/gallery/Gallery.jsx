@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { TabLabel } from "../../components/tab-label";
+import { PageTitle } from "../../components/page-title";
 import image from '../../config/image.json';
 import t from '../../config/text.json';
 import "./Gallery.css";
@@ -20,18 +22,9 @@ const Gallery = () => {
     return (
         <HelmetProvider>
             <Container className="Gallery-header">
-                <Helmet>
-                    <meta charSet="utf-8" />
-                    <title>{t.gallery.title} | {t.meta.title}</title>
-                    <meta name="description" content={t.meta.description} />
-                </Helmet>
+                <TabLabel label={t.gallery.title} />
                 <Col>
-                    <Row className="mb-5 mt-3 pt-md-3">
-                        <Col lg="12" className="text-header">
-                            <h1 className="display-4 mb-4">{t.gallery.title}</h1>
-                            <hr className="t_border my-4 ml-0" />
-                        </Col>
-                    </Row>
+                    <PageTitle title={t.gallery.title}/>
                     <Row className="sec_sp justify-content-center align-items-center">
                         <Col xs="auto">
                             <Button className="gallery-button" onClick={handlePrevClick}>←</Button>

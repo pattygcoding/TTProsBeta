@@ -1,5 +1,10 @@
 .sec_sp {
-    margin-bottom: calc(3rem + 5.128vw)
+    margin-bottom: calc(3rem + 5.128vw);
+}
+
+.overflow {
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .table td,

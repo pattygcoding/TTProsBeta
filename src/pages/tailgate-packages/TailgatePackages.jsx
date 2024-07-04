@@ -1,18 +1,22 @@
 import React, { useState } from "react";
 import * as emailjs from "emailjs-com";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col, Alert } from "react-bootstrap";
 import { ContactForms } from './contact-forms';
 import { PackageSelection } from './package-selection';
 import { PackageInfograph } from "./package-infograph";
 import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
-import email from '../../config/email.json';
+import { TabLabel } from "../../components/tab-label";
+import { PageTitle } from "../../components/page-title";
+import email from '../../config/email_test.json';
 import t from '../../config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
 
 const TailgatePackages = () => {
+
+	
 	const [formData, setFormData] = useState({
 		first_name: "",
 		last_name: "",
@@ -47,6 +51,8 @@ const TailgatePackages = () => {
 		alertmessage: "",
 		variant: "",
 	});
+
+	
 
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
 
@@ -172,23 +178,17 @@ const TailgatePackages = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
 	};
 
+	const gameHandlers = { selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
+	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent };
+
 	return (
 		<HelmetProvider>
 			<Container>
-				<Helmet>
-					<meta charSet="utf-8" />
-					<title>{t.packages.select_title} | {t.meta.title}</title>
-					<meta name="description" content={t.meta.description} />
-				</Helmet>
+				<TabLabel label={t.packages.select_title}/>
 				<Col>
-					<Row className="mb-5 mt-3 pt-md-3">
-						<Col lg="12" className="t-header">
-							<h1 className="display-4 mb-4">{t.packages.select_title}</h1>
-							<hr className="t_border my-4 ml-0" />
-						</Col>
-					</Row>
+					<PageTitle title={t.packages.select_title}/>
 					<Col>
-					<div class="pictures responsive-image" onClick={handleScrollToForm}>
+					<div class="pictures overflow" onClick={handleScrollToForm}>
 						<PackageInfograph />
 					</div>
 					</Col>
@@ -204,27 +204,11 @@ const TailgatePackages = () => {
 									<Col lg="12" className="mb-4"></Col>
 								</Row>
 								<PackageSelection
-									selectedPackageType={selectedPackageType}
-									handlePackageTypeChange={handlePackageTypeChange}
-									handleSeason={handleSeason}
-									handleGameOne={handleGameOne}
-									handleGameTwo={handleGameTwo}
-									handleGameThree={handleGameThree}
-									handleGameFour={handleGameFour}
-									handleGameFive={handleGameFive}
-									handleGameSix={handleGameSix}
-									handleGameSeven={handleGameSeven}
-									formData={formData}
+									{...gameHandlers}
 									style={{ background: "black" }}
 								/>
 								<AddOnSelection
-									formData={formData}
-									handleCooler={handleCooler}
-									handleChair={handleChair}
-									handleTable={handleTable}
-									handleTent={handleTent}
-									handleCocktailTable={handleCocktailTable}
-									handleSideTent={handleSideTent}
+									{...addOnHandlers}
 									style={{ background: "black" }}
 								/>
 								<ParkingForms
