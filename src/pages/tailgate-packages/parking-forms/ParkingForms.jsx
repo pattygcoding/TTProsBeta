@@ -7,7 +7,6 @@ const ParkingForms = ({ formData, handleChange }) => {
             <Col lg="6" className="form-group">
                 <label htmlFor="lot_number">Lot Number:</label>
                 <input
-                    type="number"
                     className="form-control"
                     id="lot_number"
                     name="lot_number"
@@ -19,7 +18,6 @@ const ParkingForms = ({ formData, handleChange }) => {
             <Col lg="6" className="form-group">
                 <label htmlFor="spot_number">Spot Number:</label>
                 <input
-                    type="number"
                     className="form-control"
                     id="spot_number"
                     name="spot_number"
