@@ -1,5 +1,5 @@
 .Gallery-header {
-    text-align: center;
+    text-align: left;
 }
 
 .sec_sp {
@@ -13,10 +13,24 @@
     border-color: var(--text-color) !important;
 }
 
-.gallery-image {
-    height: auto;
+.image-container {
+    position: relative;
     width: 500px;
-    margin: 0 10px;
+    height: auto;
+    overflow: hidden;
+}
+
+.gallery-slide {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-slide.transition {
+    transform: translateX(-100%);
+}
+
+.gallery-image {
+    width: 100%;
 }
 
 .gallery-button {
