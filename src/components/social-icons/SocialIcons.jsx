@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFacebookF } from "react-icons/fa";
-import text from '../../config/text.json';
+import text from '@/config/text.json';
 import "./SocialIcons.css";
 
 const SocialIcons = (params) => {

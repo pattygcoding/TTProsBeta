@@ -1,5 +1,5 @@
 import React from "react";
-import t from '../../config/text.json';
+import t from '@/config/text.json';
 import { Helmet } from "react-helmet-async";
 
 const TabLabel = ({ label }) => {

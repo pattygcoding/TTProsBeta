@@ -4,9 +4,9 @@ import {
   BrowserRouter as Router,
   useLocation,
 } from "react-router-dom";
-import withRouter from "../hooks/withRouter";
+import withRouter from "@/hooks/withRouter";
 import AppRoutes from "./routes";
-import { Menu } from "../menu";
+import { Menu } from "@/menu";
 import "./App.css";
 
 function _ScrollToTop(props) {

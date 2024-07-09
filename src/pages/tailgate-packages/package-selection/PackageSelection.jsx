@@ -1,6 +1,6 @@
 // components/RequestPackage/PackageSelection.js
 import React from 'react';
-import t from '../../../config/text.json';
+import t from '@/config/text.json';
 import { GameSelection } from './game-selection';
 import "./PackageSelection.css";
 

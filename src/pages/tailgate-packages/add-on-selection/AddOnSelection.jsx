@@ -1,6 +1,6 @@
 // components/RequestPackage/AddOnSelection.js
 import React from 'react';
-import t from '../../../config/text.json';
+import t from '@/config/text.json';
 import "./AddOnSelection.css";
 import { AddOnOption } from './add-on-option';
 

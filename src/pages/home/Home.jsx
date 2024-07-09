@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { HomeButton } from './home-button';
-import t from '../../config/text.json';
+import { TabLabel } from "@/components/tab-label";
+import t from '@/config/text.json';
 import "./Home.css";
-import { TabLabel } from "../../components/tab-label";
+
 
 
 const Home = () => {

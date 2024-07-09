@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import t from '../../../config/text.json';
+import t from '@/config/text.json';
 import "./PackageInfograph.css";
 
 const PackageInfograph = () => {

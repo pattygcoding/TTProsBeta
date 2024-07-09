@@ -1,5 +1,5 @@
 import React from 'react';
-import t from '../../../../config/text.json';
+import t from '@/config/text.json';
 import { GameButton } from './game-button';
 import "./GameSelection.css";
 

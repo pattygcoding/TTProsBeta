@@ -1,5 +1,5 @@
 import React from 'react';
-import t from '../../../../config/text.json';
+import t from '@/config/text.json';
 import "./AddOnOption.css";
 
 const AddOnOption = ({ selected, name, price, amount, onChange }) => {

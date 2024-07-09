@@ -1,10 +1,10 @@
 import React from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
-import { TabLabel } from "../../components/tab-label";
-import { PageTitle } from "../../components/page-title";
-import image from '../../config/image.json';
-import t from '../../config/text.json';
+import { TabLabel } from "@/components/tab-label";
+import { PageTitle } from "@/components/page-title";
+import image from '@/config/image.json';
+import t from '@/config/text.json';
 import "./About.css";
 
 const About = () => {

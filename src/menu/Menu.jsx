@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 import { VscGrabber, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
-import { DarkLightMode } from "../components/dark-light-mode";
-import t from '../config/text.json';
+import { DarkLightMode } from "@/components/dark-light-mode";
+import t from '@/config/text.json';
 import "./Menu.css";
 
 const Menu = () => {
