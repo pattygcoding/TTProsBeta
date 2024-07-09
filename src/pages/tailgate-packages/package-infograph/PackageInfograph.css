@@ -12,6 +12,7 @@
     position: relative;
     width: 100%;
     height: calc(100vw * 0.45);
+    min-height: 400px;
     border-radius: 4rem;
     background-size: 100% 100%;
     background-repeat: no-repeat;

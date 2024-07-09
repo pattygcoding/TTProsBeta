@@ -7,7 +7,6 @@
 	/* Prevents the image from repeating */
 	transition: background-image 1s ease-in-out;
 	border-radius: 4rem;
-    height: calc(100vw * 0.45);
 	/* Ensure the border radius is applied */
 	overflow: hidden;
 	/* Ensure no overflow if using pseudo-elements */
@@ -17,10 +16,13 @@
 	display: none;
 }
 
+.content-container {
+	margin-top: 60px;
+  }
+
 .intro_sec {
-	height: calc(100vh - 60px);
+	height: 100vh;
 	min-height: 700px;
-	margin-top: -60px;
 	display: flex;
 }
 
@@ -60,9 +62,12 @@
 .intro_sec .h_bg-image {
 	background-size: cover;
 	background-position: center;
-	min-height: 700px;
+	/* width: 100%; */
+	height: calc(100vw * 0.6);
 	position: relative;
 	filter: saturate(1.1);
+	/*margin-top: 16rem;*/
+	margin: 0 auto; /* Center horizontally */
 }
 
 .ac_btn {

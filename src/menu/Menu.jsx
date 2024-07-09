@@ -17,7 +17,7 @@ const Menu = () => {
   return (
     <>
       <header className="fixed-top site__header">
-        <div className="d-flex align-items-center justify-content-between">
+        <div className="d-flex align-items-center justify-content-between ">
           <Link className="navbar-brand nav_ac" to="/">
             {t.meta.logo}
           </Link>
@@ -26,7 +26,6 @@ const Menu = () => {
             <button className="menu__button  nav_ac" onClick={handleToggle}>
               {!isActive ? <VscClose /> : <VscGrabber />}
             </button>
-
           </div>
         </div>
 

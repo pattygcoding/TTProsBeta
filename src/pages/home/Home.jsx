@@ -49,8 +49,7 @@ const Home = () => {
 			<section id="home" className="home">
 				<TabLabel label={t.home.title} />
 				<div className="intro_sec d-block d-lg-flex align-items-center"  >
-
-					<div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center" style={{ paddingBottom: '1rem' }}>
+					<div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center" style={{ padding: '1rem' }}>
 						<div className="align-self-center ">
 							<div className="intro mx-auto">
 								<h1 className="mb-1x" style={{ fontSize: '2.5rem' }}>{t.home.title}</h1>

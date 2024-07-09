@@ -2,7 +2,12 @@
     top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 10px;
 }
+
+.content-container {
+    padding-top: 60px; /* Adjust this value to match your header height */
+  }
 
 .menu__button {
     color: var(--text-color);
