@@ -54,8 +54,7 @@ const Home = () => {
 							</div>
 						</div>
 					</div>
-					<div id="slideshow" className="h_bg-image order-1 order-lg-2 h-100 sec_sp">
-					</div>
+					<div id="slideshow" className="h_bg-image order-1 order-lg-2 h-100 sec_sp"/>
 				</div>
 			</section>
 		</HelmetProvider>

@@ -155,7 +155,7 @@ const TailgatePackages = () => {
 					<Row>
 						<div style={{ display: "flex", flexDirection: "row" }}>
 							<PackageInfograph type="cub" {...infographHandlers} />
-							<div style={{ width: "2.5rem" }}></div>
+							<div style={{ width: "2.5rem" }}/>
 							<PackageInfograph type="vip" {...infographHandlers}/>
 						</div>
 					</Row>
