@@ -6,7 +6,7 @@ const PackageInfograph = ({ type, handlePackageTypeChange, handleScrollToForm })
 	return (
 		<div 
 			className={`pictures ${type}`} 
-			style={{ borderRadius: '4rem', cursor: 'pointer' }} 
+			style={{ cursor: 'pointer' }} 
 			onClick={() => {
 				handlePackageTypeChange(type);
 				handleScrollToForm();

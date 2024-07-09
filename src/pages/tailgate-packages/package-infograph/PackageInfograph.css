@@ -11,10 +11,16 @@
 .vip {
     position: relative;
     width: 100%;
-    height: 700px;
+    height: calc(100vw * 0.45);
+    border-radius: 4rem;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
 }
 
 .imgtext {
@@ -31,9 +37,17 @@
 }
 
 .pictures {
-	transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    
 }
 
 .pictures:hover {
-	transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.scaler {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4rem;
+    overflow: hidden;
 }

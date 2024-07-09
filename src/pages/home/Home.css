@@ -7,6 +7,7 @@
 	/* Prevents the image from repeating */
 	transition: background-image 1s ease-in-out;
 	border-radius: 4rem;
+    height: calc(100vw * 0.45);
 	/* Ensure the border radius is applied */
 	overflow: hidden;
 	/* Ensure no overflow if using pseudo-elements */
