@@ -29,3 +29,11 @@
     text-align: center;
     box-sizing: border-box;
 }
+
+.pictures {
+	transition: transform 0.3s ease-in-out;
+}
+
+.pictures:hover {
+	transform: scale(1.05);
+}

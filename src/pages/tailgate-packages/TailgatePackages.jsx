@@ -174,6 +174,7 @@ const TailgatePackages = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
 	};
 
+	const infographHandlers = { handlePackageTypeChange, handleScrollToForm }
 	const gameHandlers = { selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
 	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent };
 
@@ -183,11 +184,13 @@ const TailgatePackages = () => {
 				<TabLabel label={t.packages.select_title} />
 				<Col>
 					<PageTitle title={t.packages.select_title} />
-					<Col>
-						<div class="pictures " onClick={handleScrollToForm}>
-							<PackageInfograph />
+					<Row>
+						<div style={{ display: "flex", flexDirection: "row" }}>
+							<PackageInfograph type="cub" {...infographHandlers} />
+							<div style={{ width: "2.5rem" }}></div>
+							<PackageInfograph type="vip" {...infographHandlers}/>
 						</div>
-					</Col>
+					</Row>
 					<Row className="sec_sp" id="form-section">
 						<Col className="align-items-center">
 							<form onSubmit={handleSubmit} noValidate>
