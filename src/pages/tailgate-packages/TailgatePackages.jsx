@@ -80,7 +80,7 @@ const TailgatePackages = () => {
 
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
 			.then((result) => {
-				console.log(result.t);
+				console.log(result.text);
 				setFormData({
 					...formData,
 					loading: false,
@@ -90,7 +90,7 @@ const TailgatePackages = () => {
 				});
 			},
 				(error) => {
-					console.log(error.t);
+					console.log(error.text);
 					setFormData({
 						...formData,
 						loading: false,
