@@ -2,23 +2,16 @@ import React, { useEffect } from "react";
 import { HelmetProvider } from "react-helmet-async";
 import { HomeButton } from './home-button';
 import { Row } from 'react-bootstrap';
+import { images } from "./Home.utils";
 import { TabLabel } from "@/components/tab-label";
 import t from '@/config/text.json';
 import "./Home.css";
 
-
-
 const Home = () => {
 
 	useEffect(() => {
-		const images = [
-			"https://i.imgur.com/N7XsoR3.jpeg",
-			"https://i.imgur.com/yeJiq5G.jpeg",
-			"https://i.imgur.com/ckURYig.jpeg",
-			"https://i.imgur.com/hVx74Ve.jpeg",
-			"https://i.imgur.com/oU0Ma5E.jpeg",
-			"https://i.imgur.com/N7XsoR3.jpeg"
-		];
+		let currentIndex = 0;
+		const slideshow = document.getElementById('slideshow');
 
 		const preloadImages = () => {
 			images.forEach((image) => {
@@ -29,9 +22,6 @@ const Home = () => {
 			});
 		};
 
-		let currentIndex = 0;
-		const slideshow = document.getElementById('slideshow');
-
 		const changeImage = () => {
 			slideshow.style.backgroundImage = `url(${images[currentIndex]})`;
 			currentIndex = (currentIndex + 1) % images.length;
@@ -39,9 +29,9 @@ const Home = () => {
 
 		preloadImages();
 		changeImage();
-		const interval = setInterval(changeImage, 18000); // Change image every 18 seconds
+		const interval = setInterval(changeImage, 18000);
 
-		return () => clearInterval(interval); // Cleanup interval on component unmount
+		return () => clearInterval(interval);
 	}, []);
 
 	return (
