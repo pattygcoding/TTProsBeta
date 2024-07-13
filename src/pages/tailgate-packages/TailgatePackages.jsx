@@ -43,7 +43,7 @@ const TailgatePackages = () => {
 			document.getElementsByClassName("co_alert")[0].scrollIntoView();
 			return;
 		}
-
+		
 		setFormData({ ...formData, loading: true });
 
 		const templateParams = {
@@ -79,27 +79,25 @@ const TailgatePackages = () => {
 		};
 
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
-			.then((result) => {
-				console.log(result.text);
+			.then((r) => {
 				setFormData({
-					...formData,
+					...initialFormData,
 					loading: false,
 					alertmessage: "SUCCESS! Thank you for your message",
 					variant: "success",
 					show: true,
 				});
-			},
-				(error) => {
-					console.log(error.text);
-					setFormData({
-						...formData,
-						loading: false,
-						alertmessage: `Failed to send! ${error.t}`,
-						variant: "danger",
-						show: true,
-					});
-					document.getElementsByClassName("co_alert")[0].scrollIntoView();
+			}, (e) => {
+				setFormData({
+					...formData,
+					loading: false,
+					alertmessage: `Failed to send! ${e.text}`,
+					variant: "danger",
+					show: true,
 				});
+				document.getElementsByClassName("co_alert")[0].scrollIntoView();
+			}
+		);
 	};
 
 	const handlePackageTypeChange = (packageType) => {
@@ -155,8 +153,8 @@ const TailgatePackages = () => {
 					<Row>
 						<div style={{ display: "flex", flexDirection: "row" }}>
 							<PackageInfograph type="cub" {...infographHandlers} />
-							<div style={{ width: "2.5rem" }}/>
-							<PackageInfograph type="vip" {...infographHandlers}/>
+							<div style={{ width: "2.5rem" }} />
+							<PackageInfograph type="vip" {...infographHandlers} />
 						</div>
 					</Row>
 					<Row className="sec_sp" id="form-section">
