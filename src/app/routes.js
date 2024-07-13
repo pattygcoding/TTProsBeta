@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, Routes} from "react-router-dom";
-import withRouter from "../hooks/withRouter"
-import { Home } from "../pages/home";
-import { TailgatePackages } from "../pages/tailgate-packages";
-import { About } from "../pages/about";
-import { Gallery } from "../pages/gallery";
-import { SocialIcons } from "../components/social-icons";
+import withRouter from "@/hooks/withRouter"
+import { Home } from "@/pages/home";
+import { TailgatePackages } from "@/pages/tailgate-packages";
+import { About } from "@/pages/about";
+import { Gallery } from "@/pages/gallery";
+import { SocialIcons } from "@/components/social-icons";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const AnimatedRoutes = withRouter(({ location }) => (
