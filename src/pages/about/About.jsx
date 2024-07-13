@@ -11,7 +11,7 @@ const About = () => {
 
 	return (
 		<HelmetProvider>
-			<Container className="About-header">
+			<Container>
 				<TabLabel label={t.about.title} />
 				<Col>
 				<PageTitle title={t.about.title}/>

@@ -2,6 +2,31 @@
     text-align: left;
 }
 
+.carousel-wrapper {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.intro_sec {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.text {
+	width: 50%;
+}
+
+.carousel-item {
+	height: 100vh;
+}
+
+.carousel-item img {
+	height: 100%;
+	object-fit: cover;
+}
+
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black background */

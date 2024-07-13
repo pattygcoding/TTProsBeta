@@ -16,7 +16,7 @@ const Gallery = () => {
                 <TabLabel label={t.gallery.title} />
                 <Col>
                     <PageTitle title={t.gallery.title} />
-                    <Row className="sec_sp justify-content-center align-items-center">
+                    <div className="carousel-wrapper order-1 order-lg-2 h-100 sec_sp">
                         <Carousel>
                             {Object.keys(images).map((key, index) => (
                                 <Carousel.Item key={index}>
@@ -28,7 +28,7 @@ const Gallery = () => {
                                 </Carousel.Item>
                             ))}
                         </Carousel>
-                    </Row>
+                    </div>
                 </Col>
             </Container>
         </HelmetProvider>
