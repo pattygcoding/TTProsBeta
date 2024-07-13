@@ -17,8 +17,7 @@
 }
 
 .carousel-wrapper {
-	width: 50%;
-	margin: 0 auto;
+	min-width: 25rem;
 }
 
 .intro_sec {
