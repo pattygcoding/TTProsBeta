@@ -12,6 +12,7 @@
 /build
 
 # ignore these 
+src/config/ga.json
 src/config/email.json
 src/config/email_test.json
 server.mjs
