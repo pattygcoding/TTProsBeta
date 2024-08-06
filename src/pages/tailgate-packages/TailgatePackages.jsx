@@ -66,12 +66,14 @@ const TailgatePackages = () => {
 			include_tent: formData.include_tent ? (t.packages.add_ons.tent?.name || "") : "[-]",
 			include_cocktail_table: formData.include_cocktail_table ? (t.packages.add_ons.cocktail_table?.name || "") : "[-]",
 			include_side_tent: formData.include_side_tent ? (t.packages.add_ons.side_tent?.name || "") : "[-]",
+			include_cornhole_boards: formData.include_cornhole_boards ? (t.packages.add_ons.cornhole_boards?.name || "") : "[-]",
 			cooler_amount: formData.cooler_amount ? (t.packages?.count + formData.cooler_amount || "") : "",
 			chair_amount: formData.chair_amount ? (t.packages?.count + formData.chair_amount || "") : "",
 			table_amount: formData.table_amount ? (t.packages?.count + formData.table_amount || "") : "",
 			tent_amount: formData.tent_amount ? (t.packages?.count + formData.tent_amount || "") : "",
 			cocktail_table_amount: formData.cocktail_table_amount ? (t.packages?.count + formData.cocktail_table_amount || "") : "",
 			side_tent_amount: formData.side_tent_amount ? (t.packages?.count + formData.side_tent_amount || "") : "",
+			cornhole_boards_amount: formData.cornhole_boards_amount ? (t.packages?.count + formData.cornhole_boards_amount || "") : "",
 			lot_number: formData.lot_number,
 			spot_number: formData.spot_number,
 			additional_comment: formData.additional_comment,
@@ -135,6 +137,7 @@ const TailgatePackages = () => {
 	const handleTent = () => toggleAddOns('include_tent', 'selectedTent');
 	const handleCocktailTable = () => toggleAddOns('include_cocktail_table', 'selectedCocktailTable');
 	const handleSideTent = () => toggleAddOns('include_side_tent', 'selectedSideTent');
+	const handleCornholeBoards = () => toggleAddOns('include_cornhole_boards', 'selectedCornholeBoards');
 
 	const handleScrollToForm = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
@@ -142,7 +145,7 @@ const TailgatePackages = () => {
 
 	const infographHandlers = { handlePackageTypeChange, handleScrollToForm }
 	const gameHandlers = { selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
-	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent };
+	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent, handleCornholeBoards };
 
 	return (
 		<HelmetProvider>

@@ -107,6 +107,11 @@
 				"name": "Side Tent Cover",
 				"id": "side_tent_cover",
 				"price": 45
+			},
+			"cornhole_boards": {
+				"name": "Cornhole Boards",
+				"id": "cornhole_boards",
+				"price": 100
 			}
 		},
 		"form": {
