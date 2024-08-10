@@ -11,14 +11,16 @@ import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
 import { initialFormData } from "./TailgatePackages.utils";
 import email from '@/config/email.json';
+import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
+import { load } from 'recaptcha-v3';
 
 const TailgatePackages = () => {
 	const [formData, setFormData] = useState(initialFormData);
-
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
+	const [recaptchaValue, setRecaptchaValue] = useState(null);
 
 	const handleChange = (e) => {
 		setFormData({
@@ -27,7 +29,7 @@ const TailgatePackages = () => {
 		});
 	};
 
-	const handleSubmit = (event) => {
+	const handleSubmit = async (event) => {
 		event.preventDefault();
 
 		const requiredFields = ['first_name', 'last_name', 'email', 'phone_number'];
@@ -43,7 +45,17 @@ const TailgatePackages = () => {
 			document.getElementsByClassName("co_alert")[0].scrollIntoView();
 			return;
 		}
+
+		const recaptchaInstance = await load(ga.sk);
+		const token = await recaptchaInstance.execute('submit');
+
+		setRecaptchaToken(token);  // Save the token
 		
+		if (!token) {
+			alert("reCAPTCHA verification failed. Please try again.");
+			return;
+		}
+
 		setFormData({ ...formData, loading: true });
 
 		const templateParams = {
@@ -78,6 +90,7 @@ const TailgatePackages = () => {
 			spot_number: formData.spot_number,
 			additional_comment: formData.additional_comment,
 			hear_about_us_question: formData.hear_about_us_question,
+			recaptcha: token,
 		};
 
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
