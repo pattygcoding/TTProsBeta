@@ -15,12 +15,12 @@ import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
-import { load } from 'recaptcha-v3';
+//import { load } from 'recaptcha-v3';
 
 const TailgatePackages = () => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
-	const [recaptchaValue, setRecaptchaValue] = useState(null);
+	//const [recaptchaValue, setRecaptchaValue] = useState(null);
 
 	const handleChange = (e) => {
 		setFormData({
@@ -46,15 +46,15 @@ const TailgatePackages = () => {
 			return;
 		}
 
-		const recaptchaInstance = await load(ga.sk);
+		/* const recaptchaInstance = await load(ga.sk);
 		const token = await recaptchaInstance.execute('submit');
 
-		setRecaptchaToken(token);  // Save the token
-		
+		setRecaptchaToken(token);
+
 		if (!token) {
 			alert("reCAPTCHA verification failed. Please try again.");
 			return;
-		}
+		} */
 
 		setFormData({ ...formData, loading: true });
 
@@ -90,7 +90,7 @@ const TailgatePackages = () => {
 			spot_number: formData.spot_number,
 			additional_comment: formData.additional_comment,
 			hear_about_us_question: formData.hear_about_us_question,
-			recaptcha: token,
+			//recaptcha: token,
 		};
 
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
@@ -112,7 +112,7 @@ const TailgatePackages = () => {
 				});
 				document.getElementsByClassName("co_alert")[0].scrollIntoView();
 			}
-		);
+			);
 	};
 
 	const handlePackageTypeChange = (packageType) => {
