@@ -112,6 +112,11 @@
 				"name": "Cornhole Boards",
 				"id": "cornhole_boards",
 				"price": 100
+			},
+			"premium_chair": {
+				"name": "Premium Chair",
+				"id": "premium_chair",
+				"price": 25
 			}
 		},
 		"form": {

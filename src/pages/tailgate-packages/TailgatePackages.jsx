@@ -10,17 +10,15 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
 import { initialFormData } from "./TailgatePackages.utils";
-import email from '@/config/email.json';
+import email from '@/config/email_test.json';
 import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
-//import { load } from 'recaptcha-v3';
 
 const TailgatePackages = () => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
-	//const [recaptchaValue, setRecaptchaValue] = useState(null);
 
 	const handleChange = (e) => {
 		setFormData({
@@ -46,16 +44,6 @@ const TailgatePackages = () => {
 			return;
 		}
 
-		/* const recaptchaInstance = await load(ga.sk);
-		const token = await recaptchaInstance.execute('submit');
-
-		setRecaptchaToken(token);
-
-		if (!token) {
-			alert("reCAPTCHA verification failed. Please try again.");
-			return;
-		} */
-
 		setFormData({ ...formData, loading: true });
 
 		const templateParams = {
@@ -79,6 +67,7 @@ const TailgatePackages = () => {
 			include_cocktail_table: formData.include_cocktail_table ? (t.packages.add_ons.cocktail_table?.name || "") : "[-]",
 			include_side_tent: formData.include_side_tent ? (t.packages.add_ons.side_tent?.name || "") : "[-]",
 			include_cornhole_boards: formData.include_cornhole_boards ? (t.packages.add_ons.cornhole_boards?.name || "") : "[-]",
+			include_premium_chair: formData.include_premium_chair ? (t.packages.add_ons.premium_chair?.name || "") : "[-]",
 			cooler_amount: formData.cooler_amount ? (t.packages?.count + formData.cooler_amount || "") : "",
 			chair_amount: formData.chair_amount ? (t.packages?.count + formData.chair_amount || "") : "",
 			table_amount: formData.table_amount ? (t.packages?.count + formData.table_amount || "") : "",
@@ -86,6 +75,7 @@ const TailgatePackages = () => {
 			cocktail_table_amount: formData.cocktail_table_amount ? (t.packages?.count + formData.cocktail_table_amount || "") : "",
 			side_tent_amount: formData.side_tent_amount ? (t.packages?.count + formData.side_tent_amount || "") : "",
 			cornhole_boards_amount: formData.cornhole_boards_amount ? (t.packages?.count + formData.cornhole_boards_amount || "") : "",
+			premium_chair_amount: formData.premium_chair_amount ? (t.packages?.count + formData.premium_chair_amount || "") : "",
 			lot_number: formData.lot_number,
 			spot_number: formData.spot_number,
 			additional_comment: formData.additional_comment,
@@ -151,6 +141,7 @@ const TailgatePackages = () => {
 	const handleCocktailTable = () => toggleAddOns('include_cocktail_table', 'selectedCocktailTable');
 	const handleSideTent = () => toggleAddOns('include_side_tent', 'selectedSideTent');
 	const handleCornholeBoards = () => toggleAddOns('include_cornhole_boards', 'selectedCornholeBoards');
+	const handlePremiumChair = () => toggleAddOns('include_premium_chair', 'selectedPremiumChair');
 
 	const handleScrollToForm = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
@@ -158,7 +149,7 @@ const TailgatePackages = () => {
 
 	const infographHandlers = { handlePackageTypeChange, handleScrollToForm }
 	const gameHandlers = { selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
-	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent, handleCornholeBoards };
+	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent, handleCornholeBoards, handlePremiumChair };
 
 	return (
 		<HelmetProvider>

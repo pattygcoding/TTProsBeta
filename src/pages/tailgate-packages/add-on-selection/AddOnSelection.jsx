@@ -4,7 +4,17 @@ import t from '@/config/text.json';
 import "./AddOnSelection.css";
 import { AddOnOption } from './add-on-option';
 
-const AddOnSelection = ({ formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent, handleCornholeBoards }) => {
+const AddOnSelection = ({ 
+	formData, 
+	handleCooler, 
+	handleChair, 
+	handleTable, 
+	handleTent, 
+	handleCocktailTable, 
+	handleSideTent, 
+	handleCornholeBoards,
+	handlePremiumChair }) => 
+{
 	return (
 		<div style={{ paddingTop: '1rem' }} >
 			<div >Select your add-ons:</div>
@@ -22,6 +32,13 @@ const AddOnSelection = ({ formData, handleCooler, handleChair, handleTable, hand
 					price={t.packages.add_ons.chair.price}
 					amount={formData.chair_amount}
 					onChange={handleChair}
+				/>
+				<AddOnOption
+					selected={formData.include_premium_chair}
+					name={t.packages.add_ons.premium_chair.name}
+					price={t.packages.add_ons.premium_chair.price}
+					amount={formData.premium_chair_amount}
+					onChange={handlePremiumChair}
 				/>
 				<AddOnOption
 					selected={formData.include_table}
