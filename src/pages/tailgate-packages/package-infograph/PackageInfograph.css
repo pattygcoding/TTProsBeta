@@ -1,8 +1,12 @@
-.cub, .intruder {
+.cub {
     background-image: url('https://i.imgur.com/3Q2B8ID.jpeg');
 }
 
-.vip, .ultimate {
+.intruder, .ultimate {
+    background-image: url('https://i.imgur.com/TTlTIUi.jpeg');
+}
+
+.vip {
     background-image: url('https://i.imgur.com/MjM5dGm.jpeg');
 }
 
