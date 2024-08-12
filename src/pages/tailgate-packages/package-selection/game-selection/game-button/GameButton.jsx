@@ -11,7 +11,7 @@ const GameButton = ({ game, formData, handleClick, selectedPackageType }) => {
       className={`${boxClass} ${isSelected ? selectedClass : ''}`}
       onClick={handleClick}
     >
-      {game.date} {game.name} - ${selectedPackageType === 'cub' ? game.price_cub : game.price_vip}
+      {game.date} {game.name} - ${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? game.price_cub : game.price_vip}
     </div>
   );
 };

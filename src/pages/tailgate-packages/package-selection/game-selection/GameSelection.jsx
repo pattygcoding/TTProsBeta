@@ -28,10 +28,10 @@ const GameSelection = ({ formData, handleSeason, handleGameOne, handleGameTwo, h
 		<>
 			<div className='season_select'>
 				<div
-					className={`${selectedPackageType === 'cub' ? 'cub-box' : 'vip-box'} full-box ${formData.include_season ? (selectedPackageType === 'cub' ? 'selected-orange' : 'selected-purple') : ''}`}
+					className={`${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'cub-box' : 'vip-box'} full-box ${formData.include_season ? (selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'selected-orange' : 'selected-purple') : ''}`}
 					onClick={handleSeason}
 				>
-					{t.packages.season.name} - ${selectedPackageType === 'cub' ? t.packages.season.price_cub : t.packages.season.price_vip}
+					{t.packages.season.name} - ${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? t.packages.season.price_cub : t.packages.season.price_vip}
 				</div>
 			</div>
 			<div className="game_select">
