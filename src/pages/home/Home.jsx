@@ -21,7 +21,7 @@ const Home = () => {
 								<Row>
 									<div className="align-items-center" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
 										<HomeButton page="/tailgate-packages" label={t.home.request_package} />
-										<HomeButton page="/away-fan-packages" label={t.home.away_package} />
+										<HomeButton page="/away-packages" label={t.home.away_package} />
 										<HomeButton page="/gallery" label={t.home.gallery} />
 										<HomeButton page="/about" label={t.home.about_us} />
 									</div>
