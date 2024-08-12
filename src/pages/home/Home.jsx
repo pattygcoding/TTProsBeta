@@ -19,8 +19,9 @@ const Home = () => {
 								<h1 className="mb-1x" style={{ fontSize: '2.5rem' }}>{t.home.title}</h1>
 								<p className="mb-1x" style={{ hyphens: 'none' }}>{t.home.description}</p>
 								<Row>
-									<div className="align-items-center">
+									<div className="align-items-center" style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
 										<HomeButton page="/tailgate-packages" label={t.home.request_package} />
+										<HomeButton page="/away-fan-packages" label={t.home.away_package} />
 										<HomeButton page="/gallery" label={t.home.gallery} />
 										<HomeButton page="/about" label={t.home.about_us} />
 									</div>
