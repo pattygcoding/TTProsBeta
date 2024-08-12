@@ -18,7 +18,7 @@ import { AdditionalInfoForms } from "./additional-info-forms";
 
 const TailgatePackages = ({ away }) => {
 	const [formData, setFormData] = useState(initialFormData);
-	const [selectedPackageType, setSelectedPackageType] = useState('cub');
+	const [selectedPackageType, setSelectedPackageType] = useState(away ? 'intruder' : 'cub');
 
 	const handleChange = (e) => {
 		setFormData({
