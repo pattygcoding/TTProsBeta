@@ -3,8 +3,8 @@ import "./GameButton.css";
 
 const GameButton = ({ game, formData, handleClick, selectedPackageType }) => {
   const isSelected = formData[`include_${game.key}`];
-  const boxClass = selectedPackageType === 'cub' ? 'cub-box' : 'vip-box';
-  const selectedClass = selectedPackageType === 'cub' ? 'selected-orange' : 'selected-purple';
+  const boxClass = selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'cub-box' : 'vip-box';
+  const selectedClass = selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'selected-orange' : 'selected-purple';
 
   return (
     <div
