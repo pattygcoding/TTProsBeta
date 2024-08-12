@@ -10,13 +10,13 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
 import { initialFormData } from "./TailgatePackages.utils";
-import email from '@/config/email.json';
+import email from '@/config/email_test.json';
 import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
 
-const TailgatePackages = () => {
+const TailgatePackages = ({ away }) => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [selectedPackageType, setSelectedPackageType] = useState('cub');
 
@@ -148,20 +148,20 @@ const TailgatePackages = () => {
 	};
 
 	const infographHandlers = { handlePackageTypeChange, handleScrollToForm }
-	const gameHandlers = { selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
+	const gameHandlers = { away, selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
 	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent, handleCornholeBoards, handlePremiumChair };
 
 	return (
 		<HelmetProvider>
 			<Container>
-				<TabLabel label={t.packages.select_title} />
+				<TabLabel label={away ? t.packages.away.select_title : t.packages.select_title} />
 				<Col>
-					<PageTitle title={t.packages.select_title} />
+					<PageTitle title={away ? t.packages.away.select_title : t.packages.select_title} />
 					<Row>
 						<div style={{ display: "flex", flexDirection: "row" }}>
-							<PackageInfograph type="cub" {...infographHandlers} />
+							<PackageInfograph type={away ? "intruder" : "cub"} {...infographHandlers} />
 							<div style={{ width: "2.5rem" }} />
-							<PackageInfograph type="vip" {...infographHandlers} />
+							<PackageInfograph type={away ? "ultimate" : "vip"} {...infographHandlers} />
 						</div>
 					</Row>
 					<Row className="sec_sp" id="form-section">

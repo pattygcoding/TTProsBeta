@@ -1,14 +1,15 @@
-.cub {
+.cub, .intruder {
     background-image: url('https://i.imgur.com/3Q2B8ID.jpeg');
 }
 
-.vip {
+.vip, .ultimate {
     background-image: url('https://i.imgur.com/MjM5dGm.jpeg');
 }
 
-
 .cub,
-.vip {
+.vip,
+.intruder,
+.ultimate {
     position: relative;
     width: 100%;
     height: calc(100vw * 0.45);

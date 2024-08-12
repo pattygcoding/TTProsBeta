@@ -12,6 +12,10 @@
 		"gallery": "Gallery"
 	},
 	"packages": {
+		"away":
+		{
+			"select_title": "Away Fan Packages"
+		},
 		"packages_title": "Tailgate Packages",
 		"select_title": "Tailgate Packages",
 		"cub": {
@@ -21,6 +25,14 @@
 		"vip": {
 			"name": "Tiger VIP Tailgater Package",
 			"description": "2 Orange/Purple Tents\n12 Chairs\n2 Tables with Tablecloths \n1 Cooler with Ice\n"
+		},
+		"intruder": {
+			"name": "Intruder Tailgater Package",
+			"description": "1 Neutral Color Tent\n6 Natural Color Chairs\n1 Table with Tablecloth the color of your team's primary color\n"
+		},
+		"ultimate": {
+			"name": "Ultimate Away Fan Package",
+			"description": "2 Neutral Color Tents\n12 Natural Color Chairs\n2 Tables with Tablecloths the color of your team's primary color\n1 Cooler with Ice\n"
 		},
 		"season": {
 			"name": "Season Home Package",
@@ -77,6 +89,7 @@
 			"price_cub": 350,
 			"price_vip": 650
 		},
+		
 		"add_ons": {
 			"cooler": {
 				"name": "70 Quart Cooler with Ice",
@@ -133,7 +146,9 @@
 			"phone_number": "Phone Number",
 			"select_an_option": "Select an Option*",
 			"spot_number": "Spot Number",
-			"vip": "VIP Tailgater Package"
+			"vip": "VIP Tailgater Package",
+			"intruder": "Intruder Tailgater Package",
+			"ultimate": "Ultimate Tailgater Package"
 		},
 		"id": {
 			"additional_comment": "additional_comment",
@@ -163,6 +178,7 @@
 	},
 	"menu": {
 		"about_us": "About Us",
+		"away_packages": "Away Fan Packages",
 		"facebook": "Facebook",
 		"gallery": "Gallery",
 		"home": "Home",

@@ -41,6 +41,9 @@ const Menu = () => {
                     <Link onClick={handleToggle} to="/tailgate-packages" className="my-3">{t.menu.tailgate_packages}</Link>
                   </li>
                   <li className="menu_item">
+                    <Link onClick={handleToggle} to="/away-packages" className="my-3">{t.menu.away_packages}</Link>
+                  </li>
+                  <li className="menu_item">
                     <Link onClick={handleToggle} to="/gallery" className="my-3">{t.menu.gallery}</Link>
                   </li>
                   <li className="menu_item">
