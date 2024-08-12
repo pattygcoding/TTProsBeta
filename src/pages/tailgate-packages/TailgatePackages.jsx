@@ -10,7 +10,7 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
 import { initialFormData } from "./TailgatePackages.utils";
-import email from '@/config/email_test.json';
+import email from '@/config/email.json';
 import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
