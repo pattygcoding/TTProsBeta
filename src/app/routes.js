@@ -24,7 +24,7 @@ const AnimatedRoutes = withRouter(({ location }) => (
         <Route path="/about" element={<About />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/tailgate-packages" element={<TailgatePackages away={false}/>} />
-        <Route path="/away-packages" element={<TailgatePackages away={true}/>} />
+        <Route path="/away-packages" element={<TailgatePackages away/>} />
         <Route path="*" element={<Home />} />
       </Routes>
     </CSSTransition>

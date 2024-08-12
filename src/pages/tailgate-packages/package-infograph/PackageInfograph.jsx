@@ -14,7 +14,7 @@ const PackageInfograph = ({ type, handlePackageTypeChange, handleScrollToForm })
 		>
 			<div className="imgtext">
 				<h2>{t.packages[type].name}</h2>
-				<p>{t.packages[type].description.split('\n').map((line, index) => (
+				<p>{t.packages[type].description.split('\n').map((line, index) => ( 
 					<React.Fragment key={index}>{line}<br /></React.Fragment>
 				))}</p>
 			</div>
