@@ -47,6 +47,7 @@ const PackageSelection = ({ away, selectedPackageType, handlePackageTypeChange, 
 			selectedPackageType === 'ultimate'
 			? (
 				<GameSelection
+					away={away}
 					formData={formData}
 					handleSeason={handleSeason}
 					handleGameOne={handleGameOne}
