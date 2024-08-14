@@ -6,7 +6,7 @@ import "./PackageSelection.css";
 
 const PackageSelection = ({ away, selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData }) => {
 	return (
-		<div>
+		<>
 			<div style={{ paddingBottom: '0.3rem' }}>Select your package type:</div>
 			<div className='outer_package_select'>
 			{ away ? 
@@ -60,7 +60,7 @@ const PackageSelection = ({ away, selectedPackageType, handlePackageTypeChange, 
 					selectedPackageType={selectedPackageType}
 				/>
 			) : null}
-		</div>
+		</>
 	);
 };
 

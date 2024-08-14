@@ -158,9 +158,8 @@ const TailgatePackages = ({ away }) => {
 				<Col>
 					<PageTitle title={away ? t.packages.away.select_title : t.packages.select_title} />
 					<Row>
-						<div style={{ display: "flex", flexDirection: "row" }}>
+						<div className="stack-boxes">
 							<PackageInfograph type={away ? "intruder" : "cub"} {...infographHandlers} />
-							<div style={{ width: "2.5rem" }} />
 							<PackageInfograph type={away ? "ultimate" : "vip"} {...infographHandlers} />
 						</div>
 					</Row>
