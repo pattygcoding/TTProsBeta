@@ -26,22 +26,25 @@ const GameSelection = ({ away, formData, handleSeason, handleGameOne, handleGame
 
 	return (
 		<>
-			{ away ? <></> : <div className='season_select'>
-				<div
-					className={`${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'cub-box' : 'vip-box'} full-box ${formData.include_season ? (selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'selected-orange' : 'selected-purple') : ''}`}
-					onClick={handleSeason}
-				>
-					{t.packages.season.name} - ${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? t.packages.season.price_cub : t.packages.season.price_vip}
+			{away ? <></> : (
+				<div className='season_select'>
+					<div
+						className={`${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'cub-box' : 'vip-box'} full-box ${formData.include_season ? (selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'selected-orange' : 'selected-purple') : ''}`}
+						onClick={handleSeason}
+					>
+						{t.packages.season.name} - ${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? t.packages.season.price_cub : t.packages.season.price_vip}
+					</div>
 				</div>
-			</div> }
+			)}
 			<div className="game_select">
 				{games.map(game => (
 					<GameButton
 						key={game.key}
 						game={game}
 						formData={formData}
-						handleClick={handleClickMap[game.key]}
+						handleClick={formData.include_season ? null : handleClickMap[game.key]}
 						selectedPackageType={selectedPackageType}
+						disabled={formData.include_season} // Disable game buttons if season is selected
 					/>
 				))}
 			</div>
