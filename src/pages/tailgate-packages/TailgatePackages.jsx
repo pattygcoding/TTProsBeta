@@ -10,7 +10,7 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
 import { initialFormData } from "./TailgatePackages.utils";
-import email from '@/config/email.json';
+import email from '@/config/email_test.json';
 import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
@@ -143,13 +143,49 @@ const TailgatePackages = ({ away }) => {
 	const handleCornholeBoards = () => toggleAddOns('include_cornhole_boards', 'selectedCornholeBoards');
 	const handlePremiumChair = () => toggleAddOns('include_premium_chair', 'selectedPremiumChair');
 
+	// Amount handlers to update the amount without toggling inclusion
+	const handleAmountChange = (amountKey, value) => {
+		setFormData((prevData) => ({
+			...prevData,
+			[amountKey]: value,
+		}));
+	};
+
+	const handleCoolerAmount = (value) => handleAmountChange('coolerAmount', value);
+	const handleChairAmount = (value) => handleAmountChange('chairAmount', value);
+	const handlePremiumChairAmount = (value) => handleAmountChange('premiumChairAmount', value);
+	const handleTableAmount = (value) => handleAmountChange('tableAmount', value);
+	const handleTentAmount = (value) => handleAmountChange('tentAmount', value);
+	const handleCocktailTableAmount = (value) => handleAmountChange('cocktailTableAmount', value);
+	const handleSideTentAmount = (value) => handleAmountChange('sideTentAmount', value);
+	const handleCornholeBoardsAmount = (value) => handleAmountChange('cornholeBoardsAmount', value);
+
+
 	const handleScrollToForm = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
 	};
 
 	const infographHandlers = { handlePackageTypeChange, handleScrollToForm }
 	const gameHandlers = { away, selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData };
-	const addOnHandlers = { formData, handleCooler, handleChair, handleTable, handleTent, handleCocktailTable, handleSideTent, handleCornholeBoards, handlePremiumChair };
+	const addOnHandlers = {
+		formData,
+		handleCooler,
+		handleChair,
+		handleTable,
+		handleTent,
+		handleCocktailTable,
+		handleSideTent,
+		handleCornholeBoards,
+		handlePremiumChair,
+		handleCoolerAmount,
+		handleChairAmount,
+		handlePremiumChairAmount,
+		handleTableAmount,
+		handleTentAmount,
+		handleCocktailTableAmount,
+		handleSideTentAmount,
+		handleCornholeBoardsAmount,
+	};
 
 	return (
 		<HelmetProvider>

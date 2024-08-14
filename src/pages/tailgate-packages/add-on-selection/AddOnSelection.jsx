@@ -1,4 +1,3 @@
-// components/RequestPackage/AddOnSelection.js
 import React from 'react';
 import t from '@/config/text.json';
 import "./AddOnSelection.css";
@@ -13,11 +12,20 @@ const AddOnSelection = ({
 	handleCocktailTable, 
 	handleSideTent, 
 	handleCornholeBoards,
-	handlePremiumChair }) => 
+	handlePremiumChair,
+	handleCoolerAmount, 
+	handleChairAmount, 
+	handlePremiumChairAmount, 
+	handleTableAmount, 
+	handleTentAmount, 
+	handleCocktailTableAmount, 
+	handleSideTentAmount, 
+	handleCornholeBoardsAmount 
+}) => 
 {
 	return (
 		<div style={{ paddingTop: '1rem' }} >
-			<div >Select your add-ons:</div>
+			<div>Select your add-ons:</div>
 			<div className="add_on_container" style={{ paddingTop: '0.3rem' }}>
 				<AddOnOption
 					selected={formData.include_cooler}
@@ -25,6 +33,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.cooler.price}
 					amount={formData.cooler_amount}
 					onChange={handleCooler}
+					onAmountChange={handleCoolerAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_chair}
@@ -32,6 +41,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.chair.price}
 					amount={formData.chair_amount}
 					onChange={handleChair}
+					onAmountChange={handleChairAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_premium_chair}
@@ -39,6 +49,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.premium_chair.price}
 					amount={formData.premium_chair_amount}
 					onChange={handlePremiumChair}
+					onAmountChange={handlePremiumChairAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_table}
@@ -46,6 +57,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.table.price}
 					amount={formData.table_amount}
 					onChange={handleTable}
+					onAmountChange={handleTableAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_tent}
@@ -53,6 +65,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.tent.price}
 					amount={formData.tent_amount}
 					onChange={handleTent}
+					onAmountChange={handleTentAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_cocktail_table}
@@ -60,6 +73,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.cocktail_table.price}
 					amount={formData.cocktail_table_amount}
 					onChange={handleCocktailTable}
+					onAmountChange={handleCocktailTableAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_side_tent}
@@ -67,6 +81,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.side_tent.price}
 					amount={formData.side_tent_amount}
 					onChange={handleSideTent}
+					onAmountChange={handleSideTentAmount}
 				/>
 				<AddOnOption
 					selected={formData.include_cornhole_boards}
@@ -74,6 +89,7 @@ const AddOnSelection = ({
 					price={t.packages.add_ons.cornhole_boards.price}
 					amount={formData.cornhole_boards_amount}
 					onChange={handleCornholeBoards}
+					onAmountChange={handleCornholeBoardsAmount}
 				/>
 			</div>
 		</div>
