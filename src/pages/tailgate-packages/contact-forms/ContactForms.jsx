@@ -4,7 +4,6 @@ import { TextForm } from './text-form';
 import "./ContactForms.css";
 
 const ContactForms = ({ formData, handleChange, csrfToken }) => {
-
 	return (
 		<>
 			<div style={{ padding: '1rem' }} />
@@ -40,7 +39,7 @@ const ContactForms = ({ formData, handleChange, csrfToken }) => {
 				<Col lg="6" className="form-group">
 					<label htmlFor="phone_number">Phone Number <span style={{ color: 'red' }}>*</span></label>
 					<input
-						className="form-control rounded-0"
+						className="form-control"
 						id="phone_number"
 						name="phone_number"
 						type="tel"
