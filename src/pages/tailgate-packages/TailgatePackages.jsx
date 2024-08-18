@@ -9,8 +9,8 @@ import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
-import { calculatePrice, initialFormData } from "./TailgatePackages.utils";
-import email from '@/config/email.json';
+import { calculatePrice, initialFormData, isGameSelected } from "./TailgatePackages.utils";
+import email from '@/config/email_test.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
@@ -19,11 +19,24 @@ const TailgatePackages = ({ away }) => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [selectedPackageType, setSelectedPackageType] = useState(away ? 'intruder' : 'cub');
 
+	
 	const handleChange = (e) => {
 		setFormData({
 			...formData,
 			[e.target.name]: e.target.value,
 		});
+	};
+
+	const isGameSelected = () => {
+		return (
+			formData.include_game_one ||
+			formData.include_game_two ||
+			formData.include_game_three ||
+			formData.include_game_four ||
+			formData.include_game_five ||
+			formData.include_game_six ||
+			formData.include_game_seven
+		);
 	};
 
 	const handleSubmit = async (event) => {
@@ -32,7 +45,7 @@ const TailgatePackages = ({ away }) => {
 		const requiredFields = ['first_name', 'last_name', 'email', 'phone_number'];
 		const missingFields = requiredFields.filter(field => !formData[field]);
 
-		if (missingFields.length > 0) {
+		if (missingFields.length > 0 || !isGameSelected()) {
 			setFormData({
 				...formData,
 				alertmessage: "Please fill out all required fields.",
