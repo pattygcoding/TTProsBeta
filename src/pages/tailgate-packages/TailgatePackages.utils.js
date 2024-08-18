@@ -1,22 +1,40 @@
+import t from '@/config/text.json';
+
 export function calculatePrice(selectedPackageType, formData) {
     const packagePrices = {
-        season: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 1600 : 3800,
-        game_one: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 295 : 575,
-        game_two: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 350 : 650,
-        game_three: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 350 : 650,
-        game_four: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 295 : 575,
-        game_five: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 295 : 575,
-        game_six: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 295 : 575,
-        game_seven: selectedPackageType === "intruder" || selectedPackageType === "cub" ? 350 : 650,
+        season: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.season.price_cub
+            : t.packages.season.price_vip,
+        game_one: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_one.price_cub
+            : t.packages.game_one.price_vip,
+        game_two: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_two.price_cub
+            : t.packages.game_two.price_vip,
+        game_three: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_three.price_cub
+            : t.packages.game_three.price_vip,
+        game_four: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_four.price_cub
+            : t.packages.game_four.price_vip,
+        game_five: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_five.price_cub
+            : t.packages.game_five.price_vip,
+        game_six: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_six.price_cub
+            : t.packages.game_six.price_vip,
+        game_seven: selectedPackageType === "intruder" || selectedPackageType === "cub"
+            ? t.packages.game_seven.price_cub
+            : t.packages.game_seven.price_vip,
         add_ons: {
-            cooler: 60,
-            chair: 10,
-            table: 60,
-            tent: 200,
-            cocktail_table: 80,
-            side_tent: 45,
-            cornhole_boards: 100,
-            premium_chair: 25
+            cooler: t.packages.add_ons.cooler.price,
+            chair: t.packages.add_ons.chair.price,
+            table: t.packages.add_ons.table.price,
+            tent: t.packages.add_ons.tent.price,
+            cocktail_table: t.packages.add_ons.cocktail_table.price,
+            side_tent: t.packages.add_ons.side_tent.price,
+            cornhole_boards: t.packages.add_ons.cornhole_boards.price,
+            premium_chair: t.packages.add_ons.premium_chair.price
         },
     };
 
