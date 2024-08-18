@@ -9,9 +9,8 @@ import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
-import { initialFormData } from "./TailgatePackages.utils";
+import { calculatePrice, initialFormData } from "./TailgatePackages.utils";
 import email from '@/config/email.json';
-import ga from '@/config/ga.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
@@ -40,7 +39,12 @@ const TailgatePackages = ({ away }) => {
 				variant: "danger",
 				show: true,
 			});
-			document.getElementsByClassName("co_alert")[0].scrollIntoView();
+
+			const alertElement = document.getElementsByClassName("co_alert")[0];
+			if (alertElement) {
+				alertElement.scrollIntoView({ behavior: 'smooth' });
+			}
+
 			return;
 		}
 
@@ -80,7 +84,7 @@ const TailgatePackages = ({ away }) => {
 			spot_number: formData.spot_number,
 			additional_comment: formData.additional_comment,
 			hear_about_us_question: formData.hear_about_us_question,
-			//recaptcha: token,
+			total_price: calculatePrice(selectedPackageType, formData)
 		};
 
 		emailjs.send(email.service_id, email.template_id, templateParams, email.user_id)
@@ -100,10 +104,15 @@ const TailgatePackages = ({ away }) => {
 					variant: "danger",
 					show: true,
 				});
-				document.getElementsByClassName("co_alert")[0].scrollIntoView();
+
+				const alertElement = document.getElementsByClassName("co_alert")[0];
+				if (alertElement) {
+					alertElement.scrollIntoView({ behavior: 'smooth' });
+				}
 			}
 			);
 	};
+
 
 	const handlePackageTypeChange = (packageType) => {
 		setSelectedPackageType(packageType);
@@ -214,7 +223,7 @@ const TailgatePackages = ({ away }) => {
 										</button>
 									</Col>
 								</Row>
-								<div id="alert-section">
+								<div id="alert-section" class="alert-box">
 									{formData.show && (
 										<Alert variant={formData.variant} onClose={() => setFormData({ ...formData, show: false })} dismissible>
 											{formData.alertmessage}
