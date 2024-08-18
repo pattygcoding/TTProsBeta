@@ -182,7 +182,6 @@ const TailgatePackages = ({ away }) => {
 	const handleSideTentAmount = (value) => handleAmountChange('sideTentAmount', value);
 	const handleCornholeBoardsAmount = (value) => handleAmountChange('cornholeBoardsAmount', value);
 
-
 	const handleScrollToForm = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
 	};

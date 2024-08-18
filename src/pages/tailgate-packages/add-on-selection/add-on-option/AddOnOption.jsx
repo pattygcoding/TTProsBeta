@@ -1,5 +1,6 @@
 import React from 'react';
 import t from '@/config/text.json';
+import { Form } from 'react-bootstrap';
 import "./AddOnOption.css";
 
 const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }) => {
@@ -12,16 +13,17 @@ const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }
 			{selected && (
 				<div className="countbox" onClick={(e) => e.stopPropagation()}>
 					Count:&nbsp;
-					<input
-						className="form-control"
+					<Form.Control
 						type="number"
-						placeholder="Enter amount"
+						min="1"
 						value={amount}
 						onChange={(e) => {
-							e.stopPropagation(); // Prevent parent box deselection
-							onAmountChange(e); // Update the amount without affecting selection
+							e.stopPropagation();
+							const value = e.target.value;
+							if (value >= 1) {
+								onAmountChange(value); // Ensure this function is called on both increase and decrease
+							}
 						}}
-						onClick={(e) => e.stopPropagation()}
 					/>
 				</div>
 			)}
