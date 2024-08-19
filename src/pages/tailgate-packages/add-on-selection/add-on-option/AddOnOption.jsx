@@ -17,12 +17,11 @@ const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }
 					Count:&nbsp;
 					<Form.Control
 						type="number"
-						min="1"
 						value={amount}
 						onChange={(e) => {
 							e.stopPropagation();
-							const newAmount = parseInt(e.target.value, 10);
-							if (!isNaN(newAmount) && newAmount >= 1) {
+							const newAmount = e.target.value === '' ? '' : parseInt(e.target.value, 10);
+							if (newAmount === '' || (!isNaN(newAmount) && newAmount >= 1)) {
 								onAmountChange(newAmount);
 							}
 						}}

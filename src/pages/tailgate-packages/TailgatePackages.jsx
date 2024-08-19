@@ -10,7 +10,7 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
 import { calculatePrice, initialFormData } from "./TailgatePackages.utils";
-import email from '@/config/email.json';
+import email from '@/config/email_test.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
 import { AdditionalInfoForms } from "./additional-info-forms";
@@ -39,6 +39,22 @@ const TailgatePackages = ({ away }) => {
 		);
 	};
 
+	const validCountValues = (formData) => {
+		const amounts = [
+			formData.include_cooler ? formData.cooler_amount : null,
+			formData.include_chair ? formData.chair_amount : null,
+			formData.include_table ? formData.table_amount : null,
+			formData.include_tent ? formData.tent_amount : null,
+			formData.include_cocktail_table ? formData.cocktail_table_amount : null,
+			formData.include_side_tent ? formData.side_tent_amount : null,
+			formData.include_cornhole_boards ? formData.cornhole_boards_amount : null,
+			formData.include_premium_chair ? formData.premium_chair_amount : null
+		];
+	
+		// Check that all amounts are greater than 0
+		return amounts.every(amount => amount === null || amount > 0);
+	};
+
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 
@@ -49,6 +65,22 @@ const TailgatePackages = ({ away }) => {
 			setFormData({
 				...formData,
 				alertmessage: "Please fill out all required fields.",
+				variant: "danger",
+				show: true,
+			});
+
+			const alertElement = document.getElementsByClassName("co_alert")[0];
+			if (alertElement) {
+				alertElement.scrollIntoView({ behavior: 'smooth' });
+			}
+
+			return;
+		}
+
+		if (!validCountValues(formData)) {
+			setFormData({
+				...formData,
+				alertmessage: "Add on amounts must be a number greater than 0",
 				variant: "danger",
 				show: true,
 			});
