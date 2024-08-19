@@ -9,7 +9,9 @@ const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }
 			className={`generic-box add_on_box ${selected ? 'selected-orange' : ''}`}
 			onClick={onChange}
 		>
-			{name} - ${price}{t.packages.form.per_game}
+			<div className="addon-description">
+				{name} - ${price}{t.packages.form.per_game}
+			</div>
 			{selected && (
 				<div className="countbox" onClick={(e) => e.stopPropagation()}>
 					Count:&nbsp;
@@ -19,9 +21,9 @@ const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }
 						value={amount}
 						onChange={(e) => {
 							e.stopPropagation();
-							const value = e.target.value;
-							if (value >= 1) {
-								onAmountChange(value); // Ensure this function is called on both increase and decrease
+							const newAmount = parseInt(e.target.value, 10);
+							if (!isNaN(newAmount) && newAmount >= 1) {
+								onAmountChange(newAmount);
 							}
 						}}
 					/>
@@ -29,6 +31,6 @@ const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }
 			)}
 		</div>
 	);
-}
+};
 
 export default AddOnOption;

@@ -9,7 +9,7 @@ import { ParkingForms } from "./parking-forms";
 import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from "@/components/tab-label";
 import { PageTitle } from "@/components/page-title";
-import { calculatePrice, initialFormData, isGameSelected } from "./TailgatePackages.utils";
+import { calculatePrice, initialFormData } from "./TailgatePackages.utils";
 import email from '@/config/email.json';
 import t from '@/config/text.json';
 import "./TailgatePackages.css";
@@ -19,7 +19,6 @@ const TailgatePackages = ({ away }) => {
 	const [formData, setFormData] = useState(initialFormData);
 	const [selectedPackageType, setSelectedPackageType] = useState(away ? 'intruder' : 'cub');
 
-	
 	const handleChange = (e) => {
 		setFormData({
 			...formData,
@@ -29,6 +28,7 @@ const TailgatePackages = ({ away }) => {
 
 	const isGameSelected = () => {
 		return (
+			formData.include_season ||
 			formData.include_game_one ||
 			formData.include_game_two ||
 			formData.include_game_three ||
@@ -64,11 +64,14 @@ const TailgatePackages = ({ away }) => {
 		setFormData({ ...formData, loading: true });
 
 		const templateParams = {
+			// Contact Info
 			first_name: formData.first_name,
 			last_name: formData.last_name,
 			email: formData.email,
 			phone_number: formData.phone_number,
 			package_type: selectedPackageType,
+
+			// Games
 			include_season: formData.include_season ? (t.packages.season?.name || "") : "",
 			include_game_one: formData.include_game_one ? (t.packages.game_one?.name || "") : "",
 			include_game_two: formData.include_game_two ? (t.packages.game_two?.name || "") : "",
@@ -77,22 +80,28 @@ const TailgatePackages = ({ away }) => {
 			include_game_five: formData.include_game_five ? (t.packages.game_five?.name || "") : "",
 			include_game_six: formData.include_game_six ? (t.packages.game_six?.name || "") : "",
 			include_game_seven: formData.include_game_seven ? (t.packages.game_seven?.name || "") : "",
-			include_cooler: formData.include_cooler ? (t.packages.add_ons.cooler?.name || "") : "[-]",
-			include_chair: formData.include_chair ? (t.packages.add_ons.chair?.name || "") : "[-]",
-			include_table: formData.include_table ? (t.packages.add_ons.table?.name || "") : "[-]",
-			include_tent: formData.include_tent ? (t.packages.add_ons.tent?.name || "") : "[-]",
-			include_cocktail_table: formData.include_cocktail_table ? (t.packages.add_ons.cocktail_table?.name || "") : "[-]",
-			include_side_tent: formData.include_side_tent ? (t.packages.add_ons.side_tent?.name || "") : "[-]",
-			include_cornhole_boards: formData.include_cornhole_boards ? (t.packages.add_ons.cornhole_boards?.name || "") : "[-]",
-			include_premium_chair: formData.include_premium_chair ? (t.packages.add_ons.premium_chair?.name || "") : "[-]",
-			cooler_amount: formData.cooler_amount ? (t.packages?.count + formData.cooler_amount || "") : "",
-			chair_amount: formData.chair_amount ? (t.packages?.count + formData.chair_amount || "") : "",
-			table_amount: formData.table_amount ? (t.packages?.count + formData.table_amount || "") : "",
-			tent_amount: formData.tent_amount ? (t.packages?.count + formData.tent_amount || "") : "",
-			cocktail_table_amount: formData.cocktail_table_amount ? (t.packages?.count + formData.cocktail_table_amount || "") : "",
-			side_tent_amount: formData.side_tent_amount ? (t.packages?.count + formData.side_tent_amount || "") : "",
-			cornhole_boards_amount: formData.cornhole_boards_amount ? (t.packages?.count + formData.cornhole_boards_amount || "") : "",
-			premium_chair_amount: formData.premium_chair_amount ? (t.packages?.count + formData.premium_chair_amount || "") : "",
+
+			// Add Ons
+			include_cooler: formData.include_cooler ? (t.packages.add_ons.cooler?.name || "") : "",
+			include_chair: formData.include_chair ? (t.packages.add_ons.chair?.name || "") : "",
+			include_table: formData.include_table ? (t.packages.add_ons.table?.name || "") : "",
+			include_tent: formData.include_tent ? (t.packages.add_ons.tent?.name || "") : "",
+			include_cocktail_table: formData.include_cocktail_table ? (t.packages.add_ons.cocktail_table?.name || "") : "",
+			include_side_tent: formData.include_side_tent ? (t.packages.add_ons.side_tent?.name || "") : "",
+			include_cornhole_boards: formData.include_cornhole_boards ? (t.packages.add_ons.cornhole_boards?.name || "") : "",
+			include_premium_chair: formData.include_premium_chair ? (t.packages.add_ons.premium_chair?.name || "") : "",
+
+			// Add On Amounts
+			cooler_amount: formData.include_cooler ? formData.cooler_amount : "",
+			chair_amount: formData.include_chair ? formData.chair_amount : "",
+			table_amount: formData.include_table ? formData.table_amount : "",
+			tent_amount: formData.include_tent ? formData.tent_amount : "",
+			cocktail_table_amount: formData.include_cocktail_table ? formData.cocktail_table_amount : "",
+			side_tent_amount: formData.include_side_tent ? formData.side_tent_amount : "",
+			cornhole_boards_amount: formData.include_cornhole_boards ? formData.cornhole_boards_amount : "",
+			premium_chair_amount: formData.include_premium_chair ? formData.premium_chair_amount : "",
+
+			// Additional Info
 			lot_number: formData.lot_number,
 			spot_number: formData.spot_number,
 			additional_comment: formData.additional_comment,
@@ -125,7 +134,6 @@ const TailgatePackages = ({ away }) => {
 			}
 			);
 	};
-
 
 	const handlePackageTypeChange = (packageType) => {
 		setSelectedPackageType(packageType);
@@ -165,7 +173,6 @@ const TailgatePackages = ({ away }) => {
 	const handleCornholeBoards = () => toggleAddOns('include_cornhole_boards', 'selectedCornholeBoards');
 	const handlePremiumChair = () => toggleAddOns('include_premium_chair', 'selectedPremiumChair');
 
-	// Amount handlers to update the amount without toggling inclusion
 	const handleAmountChange = (amountKey, value) => {
 		setFormData((prevData) => ({
 			...prevData,
@@ -173,14 +180,14 @@ const TailgatePackages = ({ away }) => {
 		}));
 	};
 
-	const handleCoolerAmount = (value) => handleAmountChange('coolerAmount', value);
-	const handleChairAmount = (value) => handleAmountChange('chairAmount', value);
-	const handlePremiumChairAmount = (value) => handleAmountChange('premiumChairAmount', value);
-	const handleTableAmount = (value) => handleAmountChange('tableAmount', value);
-	const handleTentAmount = (value) => handleAmountChange('tentAmount', value);
-	const handleCocktailTableAmount = (value) => handleAmountChange('cocktailTableAmount', value);
-	const handleSideTentAmount = (value) => handleAmountChange('sideTentAmount', value);
-	const handleCornholeBoardsAmount = (value) => handleAmountChange('cornholeBoardsAmount', value);
+	const handleCoolerAmount = (value) => handleAmountChange('cooler_amount', value);
+	const handleChairAmount = (value) => handleAmountChange('chair_amount', value);
+	const handlePremiumChairAmount = (value) => handleAmountChange('premium_chair_amount', value);
+	const handleTableAmount = (value) => handleAmountChange('table_amount', value);
+	const handleTentAmount = (value) => handleAmountChange('tent_amount', value);
+	const handleCocktailTableAmount = (value) => handleAmountChange('cocktail_table_amount', value);
+	const handleSideTentAmount = (value) => handleAmountChange('side_tent_amount', value);
+	const handleCornholeBoardsAmount = (value) => handleAmountChange('cornhole_boards_amount', value);
 
 	const handleScrollToForm = () => {
 		document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
@@ -235,7 +242,7 @@ const TailgatePackages = ({ away }) => {
 										</button>
 									</Col>
 								</Row>
-								<div id="alert-section" class="alert-box">
+								<div id="alert-section" className="alert-box">
 									{formData.show && (
 										<Alert variant={formData.variant} onClose={() => setFormData({ ...formData, show: false })} dismissible>
 											{formData.alertmessage}

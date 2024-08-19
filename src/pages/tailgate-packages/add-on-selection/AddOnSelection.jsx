@@ -3,26 +3,25 @@ import t from '@/config/text.json';
 import "./AddOnSelection.css";
 import { AddOnOption } from './add-on-option';
 
-const AddOnSelection = ({ 
-	formData, 
-	handleCooler, 
-	handleChair, 
-	handleTable, 
-	handleTent, 
-	handleCocktailTable, 
-	handleSideTent, 
+const AddOnSelection = ({
+	formData,
+	handleCooler,
+	handleChair,
+	handleTable,
+	handleTent,
+	handleCocktailTable,
+	handleSideTent,
 	handleCornholeBoards,
 	handlePremiumChair,
-	handleCoolerAmount, 
-	handleChairAmount, 
-	handlePremiumChairAmount, 
-	handleTableAmount, 
-	handleTentAmount, 
-	handleCocktailTableAmount, 
-	handleSideTentAmount, 
-	handleCornholeBoardsAmount 
-}) => 
-{
+	handleCoolerAmount,
+	handleChairAmount,
+	handlePremiumChairAmount,
+	handleTableAmount,
+	handleTentAmount,
+	handleCocktailTableAmount,
+	handleSideTentAmount,
+	handleCornholeBoardsAmount
+}) => {
 	return (
 		<div style={{ paddingTop: '1rem' }} >
 			<div>Select your add-ons:</div>

@@ -3,29 +3,37 @@
 }
 
 .add_on_box {
-	height: 3.35rem;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	position: relative;
-	padding: 0 10px;
+	padding: 10px;
 	border: 2px solid #ccc;
 	cursor: pointer;
+	position: relative;
+}
+
+.addon-description {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	width: 100%;
 }
 
 .countbox {
-	position: absolute;
-	right: 10px;
+	width: 100%; /* Makes the countbox take full width */
 	display: flex;
 	align-items: center;
-	justify-content: flex-end; /* Aligns the input towards the right */
+	justify-content: flex-end;
+	margin-top: 8px; /* Adds some space between the description and the countbox */
 }
 
 .countbox input {
 	width: auto;
-	max-width: 50px; /* Decreased min-width to make it shorter */
+	max-width: 50px;
 	height: 2rem;
-	padding: 3px; /* Reduced padding */
+	padding: 3px;
 	box-sizing: border-box;
 	font-size: 1rem;
 }
