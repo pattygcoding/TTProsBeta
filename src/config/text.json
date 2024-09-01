@@ -52,8 +52,8 @@
 			"date": "9/21",
 			"name": "NC State",
 			"id": "nc_state",
-			"price_cub": 350,
-			"price_vip": 650
+			"price_cub": 650,
+			"price_vip": 950
 		},
 		"game_three": {
 			"date": "9/28",
