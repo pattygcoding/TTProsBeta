@@ -50,10 +50,11 @@
 		},
 		"game_two": {
 			"date": "9/21",
-			"name": "NC State",
+			"name": "NC State - SOLD OUT",
 			"id": "nc_state",
 			"price_cub": 650,
-			"price_vip": 950
+			"price_vip": 950,
+			"sold_out": true
 		},
 		"game_three": {
 			"date": "9/28",

@@ -24,6 +24,12 @@ const GameSelection = ({ away, formData, handleSeason, handleGameOne, handleGame
 		game_seven: handleGameSeven,
 	};
 
+	const isGameInThePast = (gameDate) => {
+		const currentYear = new Date().getFullYear();
+		const gameDateObj = new Date(`${currentYear}/${gameDate}`);
+		return gameDateObj < new Date();
+	};
+
 	return (
 		<>
 			{away ? <></> : (
@@ -37,16 +43,20 @@ const GameSelection = ({ away, formData, handleSeason, handleGameOne, handleGame
 				</div>
 			)}
 			<div className="game_select">
-				{games.map(game => (
-					<GameButton
-						key={game.key}
-						game={game}
-						formData={formData}
-						handleClick={formData.include_season ? null : handleClickMap[game.key]}
-						selectedPackageType={selectedPackageType}
-						disabled={formData.include_season} // Disable game buttons if season is selected
-					/>
-				))}
+				{games.map(game => {
+					const isDisabled = formData.include_season || isGameInThePast(game.date) || game.sold_out;
+
+					return (
+						<GameButton
+							key={game.key}
+							game={game}
+							formData={formData}
+							handleClick={!isDisabled ? handleClickMap[game.key] : null}
+							selectedPackageType={selectedPackageType}
+							disabled={isDisabled} // Disable game buttons if season is selected, date is in the past, or game is sold out
+						/>
+					);
+				})}
 			</div>
 		</>
 	);
