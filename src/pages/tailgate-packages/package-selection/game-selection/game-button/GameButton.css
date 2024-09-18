@@ -1,5 +1,4 @@
-.cub-box,
-.vip-box {
+.game-box {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -7,13 +6,14 @@
 	padding: 10px;
 	cursor: pointer;
 	flex: 1;
+	transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.cub-box:hover {
+.cub-box:hover:not(.disabled) {
 	background-color: rgba(255, 165, 0, 0.4);
 }
 
-.vip-box:hover {
+.vip-box:hover:not(.disabled) {
 	background-color: rgba(128, 0, 128, 0.4);
 }
 
@@ -33,4 +33,11 @@
 	border-color: #800080;
 	background-color: rgba(128, 0, 128, 0.4);
 	font-weight: bold;
+}
+
+@media (max-width: 767.98px) {
+	.game-box {
+		padding: 8px;
+		font-size: 0.9rem;
+	}
 }

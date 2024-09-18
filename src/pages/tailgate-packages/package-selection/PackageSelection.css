@@ -1,8 +1,8 @@
 .outer_package_select {
 	display: flex;
-	flex-wrap: wrap; /* Allows the divs to wrap onto the next line */
+	flex-wrap: wrap;
 	margin-bottom: 1rem;
-	justify-content: space-between; /* Distribute space evenly */
+	justify-content: space-between;
 }
 
 .selectable-box {
@@ -13,7 +13,7 @@
 	padding: 10px;
 	cursor: pointer;
 	hyphens: none;
-    flex: 1 1 calc(50% - 1rem); /* Allow boxes to take up 50% of the width, minus the gap */
+    flex: 1 1 calc(50% - 1rem);
 	box-sizing: border-box;
 }
 
