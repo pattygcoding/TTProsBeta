@@ -17,6 +17,12 @@
 	background-color: rgba(128, 0, 128, 0.4);
 }
 
+.disabled {
+	cursor: not-allowed;
+	opacity: 0.5;
+	pointer-events: none;
+}
+
 .selected-orange {
 	border-color: #ffa500;
 	background-color: rgba(255, 165, 0, 0.4);
