@@ -7,10 +7,6 @@
 	overflow: hidden;
 }
 
-.carousel-wrapper {
-	min-width: 25rem;
-}
-
 .intro_sec {
 	display: flex;
 	align-items: center;
@@ -39,6 +35,11 @@
 		max-width: 700px;
 		padding: 0 20px;
 	}
+
+	.carousel-wrapper {
+        width: 100vw;
+        height: 100vw;
+    }
 }
 
 .intro_sec .intro {
