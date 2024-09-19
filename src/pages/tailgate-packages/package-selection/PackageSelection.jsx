@@ -4,7 +4,7 @@ import t from '@/config/text.json';
 import { GameSelection } from './game-selection';
 import "./PackageSelection.css";
 
-const PackageSelection = ({ away, selectedPackageType, handlePackageTypeChange, handleSeason, handleGameOne, handleGameTwo, handleGameThree, handleGameFour, handleGameFive, handleGameSix, handleGameSeven, formData }) => {
+const PackageSelection = ({ formData, away, selectedPackageType, handlePackageTypeChange, ...props }) => {
 	return (
 		<>
 			<div style={{ paddingBottom: '0.3rem' }}>
@@ -53,17 +53,10 @@ const PackageSelection = ({ away, selectedPackageType, handlePackageTypeChange, 
 			selectedPackageType === 'ultimate'
 			? (
 				<GameSelection
-					away={away}
 					formData={formData}
-					handleSeason={handleSeason}
-					handleGameOne={handleGameOne}
-					handleGameTwo={handleGameTwo}
-					handleGameThree={handleGameThree}
-					handleGameFour={handleGameFour}
-					handleGameFive={handleGameFive}
-					handleGameSix={handleGameSix}
-					handleGameSeven={handleGameSeven}
+					away={away}
 					selectedPackageType={selectedPackageType}
+					{...props}
 				/>
 			) : null}
 		</>

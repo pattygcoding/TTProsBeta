@@ -10,7 +10,7 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from '@/components/tab-label';
 import { PageTitle } from '@/components/page-title';
 import { calculatePrice, initialFormData, isGameSelected, validCountValues } from './TailgatePackages.utils';
-import email from '@/config/email.json';
+import email from '@/config/email_test.json';
 import t from '@/config/text.json';
 import './TailgatePackages.css';
 import { AdditionalInfoForms } from './additional-info-forms';
@@ -151,14 +151,15 @@ const TailgatePackages = ({ away }) => {
         }));
     };
 
-    const handleSeason = () => toggleGames('include_season', 'selectedSeason', 'season');
-    const handleGameOne = () => toggleGames('include_game_one', 'selectedGameOne', 'game_one');
-    const handleGameTwo = () => toggleGames('include_game_two', 'selectedGameTwo', 'game_two');
-    const handleGameThree = () => toggleGames('include_game_three', 'selectedGameThree', 'game_three');
-    const handleGameFour = () => toggleGames('include_game_four', 'selectedGameFour', 'game_four');
-    const handleGameFive = () => toggleGames('include_game_five', 'selectedGameFive', 'game_five');
-    const handleGameSix = () => toggleGames('include_game_six', 'selectedGameSix', 'game_six');
-    const handleGameSeven = () => toggleGames('include_game_seven', 'selectedGameSeven', 'game_seven');
+    const handle_season = () => toggleGames('include_season', 'selected_season', 'season');
+    const handle_game_one = () => toggleGames('include_game_one', 'selected_game_one', 'game_one');
+    const handle_game_two = () => toggleGames('include_game_two', 'selected_game_two', 'game_two');
+    const handle_game_three = () => toggleGames('include_game_three', 'selected_game_three', 'game_three');
+    const handle_game_four = () => toggleGames('include_game_four', 'selected_game_four', 'game_four');
+    const handle_game_five = () => toggleGames('include_game_five', 'selected_game_five', 'game_five');
+    const handle_game_six = () => toggleGames('include_game_six', 'selected_game_six', 'game_six');
+    const handle_game_seven = () => toggleGames('include_game_seven', 'selected_game_seven', 'game_seven');
+
 
     const toggleAddOns = (inclusion, selection) => {
         setFormData((prevData) => ({
@@ -168,30 +169,31 @@ const TailgatePackages = ({ away }) => {
         }));
     };
 
-    const handleCooler = () => toggleAddOns('include_cooler', 'selectedCooler');
-    const handleChair = () => toggleAddOns('include_chair', 'selectedChair');
-    const handleTable = () => toggleAddOns('include_table', 'selectedTable');
-    const handleTent = () => toggleAddOns('include_tent', 'selectedTent');
-    const handleCocktailTable = () => toggleAddOns('include_cocktail_table', 'selectedCocktailTable');
-    const handleSideTent = () => toggleAddOns('include_side_tent', 'selectedSideTent');
-    const handleCornholeBoards = () => toggleAddOns('include_cornhole_boards', 'selectedCornholeBoards');
-    const handlePremiumChair = () => toggleAddOns('include_premium_chair', 'selectedPremiumChair');
+    const handle_cooler = () => toggleAddOns('include_cooler', 'selected_cooler');
+    const handle_chair = () => toggleAddOns('include_chair', 'selected_chair');
+    const handle_table = () => toggleAddOns('include_table', 'selected_table');
+    const handle_tent = () => toggleAddOns('include_tent', 'selected_tent');
+    const handle_cocktail_table = () => toggleAddOns('include_cocktail_table', 'selected_cocktail_table');
+    const handle_side_tent = () => toggleAddOns('include_side_tent', 'selected_side_tent');
+    const handle_cornhole_boards = () => toggleAddOns('include_cornhole_boards', 'selected_cornhole_boards');
+    const handle_premium_chair = () => toggleAddOns('include_premium_chair', 'selected_premium_chair');
 
-    const handleAmountChange = (amountKey, value) => {
+
+    const toggleAddOnAmounts = (amountKey, value) => {
         setFormData((prevData) => ({
             ...prevData,
             [amountKey]: value,
         }));
     };
 
-    const handleCoolerAmount = (value) => handleAmountChange('cooler_amount', value);
-    const handleChairAmount = (value) => handleAmountChange('chair_amount', value);
-    const handlePremiumChairAmount = (value) => handleAmountChange('premium_chair_amount', value);
-    const handleTableAmount = (value) => handleAmountChange('table_amount', value);
-    const handleTentAmount = (value) => handleAmountChange('tent_amount', value);
-    const handleCocktailTableAmount = (value) => handleAmountChange('cocktail_table_amount', value);
-    const handleSideTentAmount = (value) => handleAmountChange('side_tent_amount', value);
-    const handleCornholeBoardsAmount = (value) => handleAmountChange('cornhole_boards_amount', value);
+    const handle_cooler_amount = (value) => toggleAddOnAmounts('cooler_amount', value);
+    const handle_chair_amount = (value) => toggleAddOnAmounts('chair_amount', value);
+    const handle_premium_chair_amount = (value) => toggleAddOnAmounts('premium_chair_amount', value);
+    const handle_table_amount = (value) => toggleAddOnAmounts('table_amount', value);
+    const handle_tent_amount = (value) => toggleAddOnAmounts('tent_amount', value);
+    const handle_cocktail_table_amount = (value) => toggleAddOnAmounts('cocktail_table_amount', value);
+    const handle_side_tent_amount = (value) => toggleAddOnAmounts('side_tent_amount', value);
+    const handle_cornhole_boards_amount = (value) => toggleAddOnAmounts('cornhole_boards_amount', value);
 
     const handleScrollToForm = () => {
         document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
@@ -199,37 +201,38 @@ const TailgatePackages = ({ away }) => {
 
     const infographHandlers = { handlePackageTypeChange, handleScrollToForm };
     const gameHandlers = {
+        formData,
         away,
         selectedPackageType,
         handlePackageTypeChange,
-        handleSeason,
-        handleGameOne,
-        handleGameTwo,
-        handleGameThree,
-        handleGameFour,
-        handleGameFive,
-        handleGameSix,
-        handleGameSeven,
-        formData,
+        handle_season,
+        handle_game_one,
+        handle_game_two,
+        handle_game_three,
+        handle_game_four,
+        handle_game_five,
+        handle_game_six,
+        handle_game_seven,
+
     };
     const addOnHandlers = {
         formData,
-        handleCooler,
-        handleChair,
-        handleTable,
-        handleTent,
-        handleCocktailTable,
-        handleSideTent,
-        handleCornholeBoards,
-        handlePremiumChair,
-        handleCoolerAmount,
-        handleChairAmount,
-        handlePremiumChairAmount,
-        handleTableAmount,
-        handleTentAmount,
-        handleCocktailTableAmount,
-        handleSideTentAmount,
-        handleCornholeBoardsAmount,
+        handle_cooler,
+        handle_chair,
+        handle_table,
+        handle_tent,
+        handle_cocktail_table,
+        handle_side_tent,
+        handle_cornhole_boards,
+        handle_premium_chair,
+        handle_cooler_amount,
+        handle_chair_amount,
+        handle_premium_chair_amount,
+        handle_table_amount,
+        handle_tent_amount,
+        handle_cocktail_table_amount,
+        handle_side_tent_amount,
+        handle_cornhole_boards_amount,
     };
 
     // Compute form validity

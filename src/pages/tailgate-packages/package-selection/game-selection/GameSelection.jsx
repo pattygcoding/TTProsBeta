@@ -6,15 +6,16 @@ import "./GameSelection.css";
 const GameSelection = ({
     away,
     formData,
-    handleSeason,
-    handleGameOne,
-    handleGameTwo,
-    handleGameThree,
-    handleGameFour,
-    handleGameFive,
-    handleGameSix,
-    handleGameSeven,
-    selectedPackageType
+    selectedPackageType,
+    handle_season,
+    handle_game_one,
+    handle_game_two,
+    handle_game_three,
+    handle_game_four,
+    handle_game_five,
+    handle_game_six,
+    handle_game_seven,
+    
 }) => {
     const games = [
         { key: 'game_one', ...t.packages.game_one },
@@ -27,13 +28,13 @@ const GameSelection = ({
     ];
 
     const handleClickMap = {
-        game_one: handleGameOne,
-        game_two: handleGameTwo,
-        game_three: handleGameThree,
-        game_four: handleGameFour,
-        game_five: handleGameFive,
-        game_six: handleGameSix,
-        game_seven: handleGameSeven,
+        game_one: handle_game_one,
+        game_two: handle_game_two,
+        game_three: handle_game_three,
+        game_four: handle_game_four,
+        game_five: handle_game_five,
+        game_six: handle_game_six,
+        game_seven: handle_game_seven,
     };
 
     const isGameInThePast = (gameDate) => {
@@ -48,7 +49,7 @@ const GameSelection = ({
                 <div className='season_select'>
                     <div
                         className={`selection-box ${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'cub-box' : 'vip-box'} ${formData.include_season ? (selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'selected-orange' : 'selected-purple') : ''}`}
-                        onClick={handleSeason}
+                        onClick={handle_season}
                     >
                         {t.packages.season.name} - $
                         {selectedPackageType === 'cub' || selectedPackageType === 'intruder'
