@@ -1,11 +1,14 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
+import { RequiredStar } from '@/components/required-star';
 import "./TextForm.css";
 
 const TextForm = ({ label, name, value, handleChange }) => {
 	return (
 		<Col className="form-group">
-			<label htmlFor={name}>{label} <span style={{ color: 'red' }}>*</span></label>
+			<label htmlFor={name}>
+				{label} <RequiredStar/>
+			</label>
 			<input
 				className="form-control"
 				id={name}

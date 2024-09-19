@@ -1,10 +1,11 @@
 import React from 'react';
+import data from '@/config/datapack.json';
 import "./GameButton.css";
 
 const GameButton = ({ game, formData, handleClick, selectedPackageType, disabled }) => {
 	const isSelected = formData[`include_${game.key}`];
 
-	const isStandardTier = selectedPackageType === 'cub' || selectedPackageType === 'intruder';
+	const isStandardTier = data.standard_packages.includes(selectedPackageType);
 	const boxTypeClass = isStandardTier ? 'cub-box' : 'vip-box';
 	const selectedClass = isStandardTier ? 'selected-orange' : 'selected-purple';
 

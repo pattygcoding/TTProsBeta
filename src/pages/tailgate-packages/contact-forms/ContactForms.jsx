@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+import { RequiredStar } from '@/components/required-star';
 import { TextForm } from './text-form';
 import "./ContactForms.css";
 
@@ -37,7 +38,9 @@ const ContactForms = ({ formData, handleChange, csrfToken }) => {
 					/>
 				</Col>
 				<Col lg="6" className="form-group">
-					<label htmlFor="phone_number">Phone Number <span style={{ color: 'red' }}>*</span></label>
+					<label htmlFor="phone_number">
+						Phone Number <RequiredStar/>
+					</label>
 					<input
 						className="form-control"
 						id="phone_number"

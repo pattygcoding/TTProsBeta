@@ -1,12 +1,13 @@
 import React from 'react';
 import t from '@/config/text.json';
+import data from '@/config/datapack.json'
 import { Form } from 'react-bootstrap';
 import "./AddOnOption.css";
 
-const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange }) => {
+const AddOnOption = ({ selected, name, price, amount, onChange, onAmountChange, selectedPackageType }) => {
 	return (
 		<div
-			className={`generic-box add_on_box ${selected ? 'selected-orange' : ''}`}
+			className={`generic-box add_on_box ${data.standard_packages.includes(selectedPackageType) ? (selected ? 'select-orange' : 'ao-orange') : (selected ? 'select-purple' : 'ao-purple')}`}
 			onClick={onChange}
 		>
 			<div className="addon-description">

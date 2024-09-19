@@ -13,7 +13,7 @@
         "vip",
         "ultimate"
     ],
-    "contact_fields": [
+    "fields": [
         "first_name",
         "last_name",
         "email",

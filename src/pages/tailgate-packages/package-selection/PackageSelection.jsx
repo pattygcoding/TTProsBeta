@@ -1,64 +1,45 @@
-// components/RequestPackage/PackageSelection.js
 import React from 'react';
+import data from '@/config/datapack.json';
 import t from '@/config/text.json';
+import { RequiredStar } from '@/components/required-star';
 import { GameSelection } from './game-selection';
 import "./PackageSelection.css";
 
 const PackageSelection = ({ formData, away, selectedPackageType, handlePackageTypeChange, ...props }) => {
+	const packageTypes = away
+		? { standard: 'intruder', premium: 'ultimate', standardLabel: t.packages.form.intruder, premiumLabel: t.packages.form.ultimate }
+		: { standard: 'cub', premium: 'vip', standardLabel: t.packages.form.cub, premiumLabel: t.packages.form.vip };
+
 	return (
 		<>
 			<div style={{ paddingBottom: '0.3rem' }}>
-				Select your package type:
-				<span style={{ color: 'red' }}>*</span>
+				Select your package type: <RequiredStar/>
 			</div>
 			<div className='outer_package_select'>
-			{ away ? 
 				<div
-					className={`selectable-box orange-border ${selectedPackageType === 'intruder' ? 'selected-orange' : ''}`}
-					onClick={() => handlePackageTypeChange('intruder')}
+					className={`selectable-box orange-border ${selectedPackageType === packageTypes.standard ? 'selected-orange' : ''}`}
+					onClick={() => handlePackageTypeChange(packageTypes.standard)}
 				>
-					{t.packages.form.intruder}
-				</div> 
-				:
-				<div
-					className={`selectable-box orange-border ${selectedPackageType === 'cub' ? 'selected-orange' : ''}`}
-					onClick={() => handlePackageTypeChange('cub')}
-				>
-					{t.packages.form.cub}
+					{packageTypes.standardLabel}
 				</div>
-			}
-			{ away ? 
 				<div
-					className={`selectable-box purple-border ${selectedPackageType === 'ultimate' ? 'selected-purple' : ''}`}
-					onClick={() => handlePackageTypeChange('ultimate')}
+					className={`selectable-box purple-border ${selectedPackageType === packageTypes.premium ? 'selected-purple' : ''}`}
+					onClick={() => handlePackageTypeChange(packageTypes.premium)}
 				>
-					{t.packages.form.ultimate}
-				</div> 
-				:
-				<div
-					className={`selectable-box purple-border ${selectedPackageType === 'vip' ? 'selected-purple' : ''}`}
-					onClick={() => handlePackageTypeChange('vip')}
-				>
-					{t.packages.form.vip}
+					{packageTypes.premiumLabel}
 				</div>
-			}
 			</div>
 			<div style={{ paddingBottom: '0.3rem' }}>
-				Select your games:
-				<span style={{ color: 'red' }}>*</span>
+				Select your games: <RequiredStar/>
 			</div>
-			{selectedPackageType === 'cub' || 
-			selectedPackageType === 'vip' ||
-			selectedPackageType === 'intruder' ||
-			selectedPackageType === 'ultimate'
-			? (
+			{data.packages.includes(selectedPackageType) && (
 				<GameSelection
 					formData={formData}
 					away={away}
 					selectedPackageType={selectedPackageType}
 					{...props}
 				/>
-			) : null}
+			)}
 		</>
 	);
 };

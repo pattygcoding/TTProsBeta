@@ -1,5 +1,6 @@
 import React from 'react';
 import t from '@/config/text.json';
+import data from '@/config/datapack.json';
 import { GameButton } from './game-button'; // Adjusted import to default export
 import "./GameSelection.css";
 
@@ -8,34 +9,19 @@ const GameSelection = ({
     formData,
     selectedPackageType,
     handle_season,
-    handle_game_one,
-    handle_game_two,
-    handle_game_three,
-    handle_game_four,
-    handle_game_five,
-    handle_game_six,
-    handle_game_seven,
-    
+    ...props
 }) => {
-    const games = [
-        { key: 'game_one', ...t.packages.game_one },
-        { key: 'game_two', ...t.packages.game_two },
-        { key: 'game_three', ...t.packages.game_three },
-        { key: 'game_four', ...t.packages.game_four },
-        { key: 'game_five', ...t.packages.game_five },
-        { key: 'game_six', ...t.packages.game_six },
-        { key: 'game_seven', ...t.packages.game_seven },
-    ];
+    const gamesOmitSeason = data.game_fields.filter(field => field !== "season");
 
-    const handleClickMap = {
-        game_one: handle_game_one,
-        game_two: handle_game_two,
-        game_three: handle_game_three,
-        game_four: handle_game_four,
-        game_five: handle_game_five,
-        game_six: handle_game_six,
-        game_seven: handle_game_seven,
-    };
+    const games = gamesOmitSeason.map(field => ({
+        key: field,
+        ...t.packages[field]
+    }));
+
+    const handleClickMap = gamesOmitSeason.reduce((acc, gameField) => {
+        acc[gameField] = props[`handle_${gameField}`];
+        return acc;
+    }, {});
 
     const isGameInThePast = (gameDate) => {
         const currentYear = new Date().getFullYear();
@@ -48,7 +34,7 @@ const GameSelection = ({
             {!away && (
                 <div className='season_select'>
                     <div
-                        className={`selection-box ${selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'cub-box' : 'vip-box'} ${formData.include_season ? (selectedPackageType === 'cub' || selectedPackageType === 'intruder' ? 'selected-orange' : 'selected-purple') : ''}`}
+                        className={`selection-box ${data.standard_packages.includes(selectedPackageType) ? 'cub-box' : 'vip-box'} ${formData.include_season ? (data.standard_packages.includes(selectedPackageType) ? 'selected-orange' : 'selected-purple') : ''}`}
                         onClick={handle_season}
                     >
                         {t.packages.season.name} - $
