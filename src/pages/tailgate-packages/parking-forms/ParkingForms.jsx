@@ -5,7 +5,7 @@ const ParkingForms = ({ formData, handleChange }) => {
     return (
         <Row>
             <Col lg="6" className="form-group">
-                <label htmlFor="lot_number">Lot Number:</label>
+                <label htmlFor="lot_number">Lot Number(s):</label>
                 <input
                     className="form-control"
                     id="lot_number"
@@ -16,7 +16,7 @@ const ParkingForms = ({ formData, handleChange }) => {
                 />
             </Col>
             <Col lg="6" className="form-group">
-                <label htmlFor="spot_number">Spot Number:</label>
+                <label htmlFor="spot_number">Spot Number(s):</label>
                 <input
                     className="form-control"
                     id="spot_number"

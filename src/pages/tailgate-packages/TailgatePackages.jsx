@@ -149,7 +149,7 @@ const TailgatePackages = ({ away }) => {
         }));
     };
 
-    const toggleAddOnAmounts = (amountKey, value) => {
+    const toggleAmounts = (amountKey, value) => {
         setFormData((prevData) => ({
             ...prevData,
             [amountKey]: value,
@@ -158,7 +158,6 @@ const TailgatePackages = ({ away }) => {
 
     const gameHandlers = data.game_fields.reduce((handlers, field) => {
         const includeKey = `include_${field}`;
-
         handlers[`handle_${field}`] = () => toggleGames(includeKey, `selected${field}`, field);
         return handlers;
     }, {});
@@ -166,9 +165,8 @@ const TailgatePackages = ({ away }) => {
     const addOnHandlers = data.add_on_fields.reduce((handlers, field) => {
         const includeKey = `include_${field}`;
         const amountKey = `${field}_amount`;
-
         handlers[`handle_${field}`] = () => toggleAddOns(includeKey, `selected_${field}`);
-        handlers[`handle_${field}_amount`] = (value) => toggleAddOnAmounts(amountKey, value);
+        handlers[`handle_${field}_amount`] = (value) => toggleAmounts(amountKey, value);
         return handlers;
     }, {});
 

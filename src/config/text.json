@@ -39,14 +39,16 @@
 			"name": "Season Home Package",
 			"id": "season_package",
 			"price_cub": 1600,
-			"price_vip": 3800
+			"price_vip": 3800,
+			"sold_out": false
 		},
 		"game_one": {
 			"date": "9/7",
 			"name": "App State",
 			"id": "app_state",
 			"price_cub": 295,
-			"price_vip": 575
+			"price_vip": 575,
+			"sold_out": false
 		},
 		"game_two": {
 			"date": "9/21",
@@ -61,37 +63,41 @@
 			"name": "Stanford",
 			"id": "stanford",
 			"price_cub": 350,
-			"price_vip": 650
+			"price_vip": 650,
+			"sold_out": false
 		},
 		"game_four": {
 			"date": "10/19",
 			"name": "Virginia",
 			"id": "virginia",
 			"price_cub": 295,
-			"price_vip": 575
+			"price_vip": 575,
+			"sold_out": false
 		},
 		"game_five": {
 			"date": "11/2",
 			"name": "Louisville",
 			"id": "louisville",
 			"price_cub": 295,
-			"price_vip": 575
+			"price_vip": 575,
+			"sold_out": false
 		},
 		"game_six": {
 			"date": "11/23",
 			"name": "The Citadel",
 			"id": "the_citadel",
 			"price_cub": 295,
-			"price_vip": 575
+			"price_vip": 575,
+			"sold_out": false
 		},
 		"game_seven": {
 			"date": "11/30",
 			"name": "South Carolina",
 			"id": "south_carolina",
 			"price_cub": 350,
-			"price_vip": 650
+			"price_vip": 650,
+			"sold_out": false
 		},
-		
 		"add_ons": {
 			"cooler": {
 				"name": "70 Quart Cooler with Ice",
@@ -147,7 +153,7 @@
 			"per_game": "/game",
 			"phone_number": "Phone Number",
 			"select_an_option": "Select an Option*",
-			"spot_number": "Spot Number",
+			"spot_number": "Spot Number(s)",
 			"vip": "VIP Tailgater Package",
 			"intruder": "Intruder Tailgater Package",
 			"ultimate": "Ultimate Tailgater Package"
