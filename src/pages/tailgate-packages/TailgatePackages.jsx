@@ -10,6 +10,7 @@ import { AddOnSelection } from './add-on-selection';
 import { TabLabel } from '@/components/tab-label';
 import { PageTitle } from '@/components/page-title';
 import { calculatePrice, isGameSelected, validCountValues } from './TailgatePackages.utils';
+import { gameIds } from '@/utils/utils.js';
 import email from '@/config/email.json';
 import data from '@/config/datapack.json';
 import t from '@/config/text.json';
@@ -78,7 +79,7 @@ const TailgatePackages = ({ away }) => {
                 {}
             ),
 
-            ...data.game_fields.reduce(
+            ...gameIds.reduce(
                 (acc, game) => ({
                     ...acc,
                     [`include_${game}`]: formData[`include_${game}`] ? t.packages[game]?.name || '' : '',
@@ -156,7 +157,7 @@ const TailgatePackages = ({ away }) => {
         }));
     };
 
-    const gameHandlers = data.game_fields.reduce((handlers, field) => {
+    const gameHandlers = gameIds.reduce((handlers, field) => {
         const includeKey = `include_${field}`;
         handlers[`handle_${field}`] = () => toggleGames(includeKey, `selected${field}`, field);
         return handlers;

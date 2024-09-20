@@ -1,5 +1,6 @@
 import t from '@/config/text.json';
 import data from '@/config/datapack.json';
+import { gameIds } from '@/utils/utils.js';
 
 export function calculatePrice(selectedPackageType, formData) {
     let packagePrices = {
@@ -21,8 +22,8 @@ export function calculatePrice(selectedPackageType, formData) {
         return 0;
     }
   
-    data.game_fields.forEach((gameField) => {
-      packagePrices[gameField] = t.packages[gameField][priceField];
+    gameIds.forEach((game) => {
+      packagePrices[game] = t.packages[game][priceField];
     });
   
     data.add_on_fields.forEach((addOnField) => {
@@ -31,9 +32,9 @@ export function calculatePrice(selectedPackageType, formData) {
   
     let totalAmount = 0;
   
-    data.game_fields.forEach((gameField) => {
-      if (formData[`include_${gameField}`]) {
-        totalAmount += packagePrices[gameField];
+    gameIds.forEach((game) => {
+      if (formData[`include_${game}`]) {
+        totalAmount += packagePrices[game];
       }
     });
   
@@ -48,7 +49,7 @@ export function calculatePrice(selectedPackageType, formData) {
   }
 
 export function isGameSelected(formData) {
-    return data.game_fields.some((game) => formData[`include_${game}`]);
+    return gameIds.some((game) => formData[`include_${game}`]);
 }
 
 export function validCountValues(formData) {

@@ -30,14 +30,70 @@
         "phone_number"
     ],
     "game_fields": [
-        "season",
-        "game_one",
-        "game_two",
-        "game_three",
-        "game_four",
-        "game_five",
-        "game_six",
-        "game_seven"
+        {
+            "id": "season",
+            "team": "season_package",
+            "label": "Season Home Package",
+            "price_standard": 1600,
+			"price_premium": 3800,
+			"sold_out": false
+        },
+        {
+            "id": "game_one",
+            "team": "app_state",
+            "label": "App State",
+            "price_standard": 295,
+			"price_premium": 575,
+			"sold_out": false
+        },
+        {
+            "id": "game_two",
+            "team": "nc_state",
+            "label": "NC State",
+            "price_standard": 650,
+			"price_premium": 950,
+			"sold_out": true
+        },
+        {
+            "id": "game_three",
+            "team": "stanford",
+            "label": "Stanford",
+            "price_standard": 350,
+			"price_premium": 650,
+			"sold_out": false
+        },
+        {
+            "id": "game_four",
+            "team": "virginia",
+            "label": "Virginia",
+            "price_standard": 295,
+			"price_premium": 575,
+			"sold_out": false
+        },
+        {
+            "id": "game_five",
+            "team": "louisville",
+            "label": "Louisville",
+            "price_standard": 295,
+			"price_premium": 575,
+			"sold_out": false
+        },
+        {
+            "id": "game_six",
+            "team": "the_citadel",
+            "label": "The Citadel",
+            "price_standard": 295,
+			"price_premium": 575,
+			"sold_out": false
+        },
+        {
+            "id": "game_seven",
+            "team": "south_carolina",
+            "label": "South Carolina",
+            "price_standard": 350,
+			"price_premium": 650,
+			"sold_out": false
+        }
     ],
     "add_on_fields": [
         "cooler",

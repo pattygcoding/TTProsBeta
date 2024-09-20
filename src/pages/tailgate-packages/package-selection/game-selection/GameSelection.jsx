@@ -2,6 +2,7 @@ import React from 'react';
 import t from '@/config/text.json';
 import data from '@/config/datapack.json';
 import { GameButton } from './game-button'; // Adjusted import to default export
+import { gameIds } from '@/utils/utils.js';
 import "./GameSelection.css";
 
 const GameSelection = ({
@@ -11,7 +12,7 @@ const GameSelection = ({
     handle_season,
     ...props
 }) => {
-    const gamesOmitSeason = data.game_fields.filter(field => field !== "season");
+    const gamesOmitSeason = gameIds.filter(field => field !== "season");
 
     const games = gamesOmitSeason.map(field => ({
         key: field,
