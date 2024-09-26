@@ -6,12 +6,24 @@
         "ultimate"
     ],
     "standard_packages": [
-        "cub",
-        "intruder"
+        {
+            "id": "cub",
+            "label": "Cub Tailgater Package"
+        },
+        {
+            "id": "intruder",
+            "label": "Intruder Tailgater Package"
+        }
     ],
     "premium_packages": [
-        "vip",
-        "ultimate"
+        {
+            "id": "vip",
+            "label": "Tiger VIP Tailgater Package"
+        },
+        {
+            "id": "ultimate",
+            "label": "Ultimate Away Tailgater Package"
+        }
     ],
     "fields": [
         "first_name",

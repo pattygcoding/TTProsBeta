@@ -1,6 +1,6 @@
 import React from 'react';
 import t from '@/config/text.json';
-import data from '@/config/datapack.json';
+import { standardPackageIds } from '@/utils/utils.js'
 import { GameButton } from './game-button'; // Adjusted import to default export
 import { gameIds } from '@/utils/utils.js';
 import "./GameSelection.css";
@@ -35,7 +35,7 @@ const GameSelection = ({
             {!away && (
                 <div className='season_select'>
                     <div
-                        className={`selection-box ${data.standard_packages.includes(selectedPackageType) ? 'cub-box' : 'vip-box'} ${formData.include_season ? (data.standard_packages.includes(selectedPackageType) ? 'selected-orange' : 'selected-purple') : ''}`}
+                        className={`selection-box ${standardPackageIds.includes(selectedPackageType) ? 'cub-box' : 'vip-box'} ${formData.include_season ? (standardPackageIds.includes(selectedPackageType) ? 'selected-orange' : 'selected-purple') : ''}`}
                         onClick={handle_season}
                     >
                         {t.packages.season.name} - $
