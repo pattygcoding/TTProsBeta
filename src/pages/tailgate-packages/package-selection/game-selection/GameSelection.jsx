@@ -1,7 +1,7 @@
 import React from 'react';
 import t from '@/config/text.json';
 import { standardPackageIds } from '@/utils/utils.js'
-import { GameButton } from './game-button'; // Adjusted import to default export
+import { GameButtone } from './game-button'; // Adjusted import to default export
 import { gameIds } from '@/utils/utils.js';
 import "./GameSelection.css";
 
@@ -50,7 +50,7 @@ const GameSelection = ({
                     const isDisabled = formData.include_season || isGameInThePast(game.date) || game.sold_out;
 
                     return (
-                        <GameButton
+                        <GameButtone
                             key={game.key}
                             game={game}
                             formData={formData}

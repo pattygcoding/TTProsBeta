@@ -72,7 +72,7 @@
 			"id": "virginia",
 			"price_cub": 295,
 			"price_vip": 575,
-			"sold_out": false
+			"sold_out": true
 		},
 		"game_five": {
 			"date": "11/2",
@@ -80,7 +80,7 @@
 			"id": "louisville",
 			"price_cub": 295,
 			"price_vip": 575,
-			"sold_out": false
+			"sold_out": true
 		},
 		"game_six": {
 			"date": "11/23",

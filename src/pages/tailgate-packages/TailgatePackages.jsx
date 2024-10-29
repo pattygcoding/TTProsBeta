@@ -3,7 +3,7 @@ import * as emailjs from 'emailjs-com';
 import { HelmetProvider } from 'react-helmet-async';
 import { Container, Row, Col, Alert } from 'react-bootstrap';
 import { ContactForms } from './contact-forms';
-import { PackageSelection } from './package-selection';
+import { PackageSelectione } from './package-selection';
 import { PackageInfograph } from './package-infograph';
 import { ParkingForms } from './parking-forms';
 import { AddOnSelection } from './add-on-selection';
@@ -218,7 +218,7 @@ const TailgatePackages = ({ away }) => {
                                     handleChange={handleChange}
                                     style={{ background: 'black' }}
                                 />
-                                <PackageSelection {...packageSelectionProps} style={{ background: 'black' }} />
+                                <PackageSelectione {...packageSelectionProps} style={{ background: 'black' }} />
                                 <AddOnSelection {...addOnSelectionProps} style={{ background: 'black' }} />
                                 <ParkingForms formData={formData} handleChange={handleChange} />
                                 <AdditionalInfoForms formData={formData} handleChange={handleChange} />

@@ -1,1 +1,1 @@
-export { default as TailgatePackages } from './TailgatePackages';
+export { default as TailgatePackagese } from './TailgatePackages';

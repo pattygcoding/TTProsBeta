@@ -2,7 +2,7 @@ import React from 'react';
 import data from '@/config/datapack.json';
 import t from '@/config/text.json';
 import { RequiredStar } from '@/components/required-star';
-import { GameSelection } from './game-selection';
+import { GameSelectione } from './game-selection';
 import "./PackageSelection.css";
 
 const PackageSelection = ({ formData, away, selectedPackageType, handlePackageTypeChange, ...props }) => {
@@ -33,7 +33,7 @@ const PackageSelection = ({ formData, away, selectedPackageType, handlePackageTy
 				Select your games: <RequiredStar/>
 			</div>
 			{data.packages.includes(selectedPackageType) && (
-				<GameSelection
+				<GameSelectione
 					formData={formData}
 					away={away}
 					selectedPackageType={selectedPackageType}
