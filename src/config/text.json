@@ -96,7 +96,7 @@
 			"id": "south_carolina",
 			"price_cub": 350,
 			"price_vip": 650,
-			"sold_out": false
+			"sold_out": true
 		},
 		"add_ons": {
 			"cooler": {

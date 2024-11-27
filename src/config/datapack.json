@@ -104,7 +104,7 @@
             "label": "South Carolina",
             "price_standard": 350,
 			"price_premium": 650,
-			"sold_out": false
+			"sold_out": true
         }
     ],
     "add_on_fields": [
